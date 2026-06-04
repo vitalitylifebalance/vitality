@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vitality — Grounding Sheets</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #0a0907;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    #scroll-container { height: 1200vh; }
+
+    #sticky-wrapper {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      height: 100vh;
+      height: 100svh;
+      overflow: hidden;
+    }
+
+    canvas {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* ── Text overlays ── */
+    .overlay {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+
+    .overlay.right { justify-content: flex-end; }
+    .overlay.center { justify-content: center; }
+    .overlay.bottom { align-items: flex-end; padding-bottom: 8vh; }
+    .overlay.lower  { align-items: flex-end; padding-bottom: 18vh; }
+
+    .overlay .box {
+      padding: 0 8vw;
+      max-width: 480px;
+    }
+
+    .overlay.center .box {
+      text-align: center;
+      max-width: 600px;
+      padding: 0 5vw;
+    }
+
+    .overlay .eyebrow {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 200;
+      font-size: clamp(9px, 0.7vw, 11px);
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 14px;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.85), 0 2px 14px rgba(0,0,0,0.65), 0 4px 30px rgba(0,0,0,0.45);
+    }
+
+    .overlay h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(26px, 3.2vw, 48px);
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 18px;
+      letter-spacing: 0.01em;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.85), 0 4px 24px rgba(0,0,0,0.65), 0 8px 50px rgba(0,0,0,0.5);
+    }
+
+    .overlay h2 em {
+      font-style: italic;
+      color: rgba(255,255,255,0.92);
+    }
+
+    .overlay p {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: clamp(12px, 1vw, 14px);
+      line-height: 1.9;
+      color: rgba(255,255,255,0.82);
+      letter-spacing: 0.03em;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.85), 0 2px 16px rgba(0,0,0,0.65), 0 4px 32px rgba(0,0,0,0.45);
+    }
+
+    .overlay .divider {
+      width: 32px;
+      height: 1px;
+      background: rgba(255,255,255,0.35);
+      margin: 20px 0;
+    }
+
+    .overlay.center .divider { margin: 20px auto; }
+
+    .stat-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(20px, 2vw, 28px);
+      font-weight: 300;
+      color: #fff;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.85), 0 2px 16px rgba(0,0,0,0.65), 0 4px 30px rgba(0,0,0,0.45);
+    }
+
+    .stat-label {
+      font-size: clamp(9px, 0.65vw, 10px);
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+      text-shadow: 0 1px 4px rgba(0,0,0,0.85), 0 2px 14px rgba(0,0,0,0.6);
+    }
+
+    /* Sección fondo claro — sombra máxima */
+    .overlay.on-light .eyebrow  { color: rgba(255,255,255,0.9); text-shadow: 0 1px 3px rgba(0,0,0,0.95), 0 2px 12px rgba(0,0,0,0.8), 0 4px 28px rgba(0,0,0,0.6); }
+    .overlay.on-light h2        { text-shadow: 0 2px 5px rgba(0,0,0,0.95), 0 4px 20px rgba(0,0,0,0.8), 0 8px 45px rgba(0,0,0,0.65); }
+    .overlay.on-light h2 em     { text-shadow: 0 2px 5px rgba(0,0,0,0.95), 0 4px 20px rgba(0,0,0,0.8), 0 8px 45px rgba(0,0,0,0.65); }
+    .overlay.on-light p         { color: rgba(255,255,255,0.88); text-shadow: 0 1px 4px rgba(0,0,0,0.95), 0 3px 16px rgba(0,0,0,0.75), 0 6px 32px rgba(0,0,0,0.55); }
+    .overlay.on-light .stat-value { text-shadow: 0 1px 4px rgba(0,0,0,0.95), 0 3px 16px rgba(0,0,0,0.75); }
+    .overlay.on-light .stat-label { text-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 3px 14px rgba(0,0,0,0.35); }
+
+    /* Stat pills */
+    .stats {
+      display: flex;
+      gap: 24px;
+      margin-top: 24px;
+      flex-wrap: wrap;
+    }
+
+    .stat {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    #vignette {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 5;
+      background: radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.55) 100%);
+      opacity: 0.3;
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 768px) {
+      .overlay .box { padding: 0 5vw; max-width: 100%; }
+      .overlay.right { justify-content: flex-start; }
+      .overlay.right .box { padding: 0 5vw; }
+      .overlay.center .box { padding: 0 5vw; }
+      .overlay h2 { font-size: clamp(20px, 6.5vw, 30px); }
+      .overlay p { font-size: clamp(11px, 3.2vw, 13px); line-height: 1.65; }
+      .overlay .eyebrow { font-size: clamp(9px, 2.5vw, 11px); margin-bottom: 10px; }
+      .overlay .divider { margin: 12px 0; }
+      .overlay h2 { margin-bottom: 12px; }
+      .stats { gap: 16px; margin-top: 12px; }
+      .stat-value { font-size: clamp(16px, 4.5vw, 22px); }
+      .stat-label { font-size: clamp(9px, 2vw, 10px); }
+      /* bottom/lower: subir la caja poniendo más padding-bottom */
+      .overlay.bottom { padding-bottom: 28vh; }
+      .overlay.lower  { padding-bottom: 32vh; }
+    }
+
+    /* Loading */
+    #loading {
+      position: fixed;
+      inset: 0;
+      background: #0a0907;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 200;
+      gap: 20px;
+    }
+
+    #loading .logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 22px;
+      letter-spacing: 0.4em;
+      color: #C49A3C;
+      text-transform: uppercase;
+    }
+
+    #loading-bar-wrap {
+      width: 140px;
+      height: 1px;
+      background: rgba(255,255,255,0.12);
+    }
+
+    #loading-bar {
+      height: 100%;
+      width: 0%;
+      background: rgba(255,255,255,0.6);
+      transition: width 0.2s ease;
+    }
+
+    #loading .pct {
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      color: rgba(255,255,255,0.3);
+    }
+  </style>
+</head>
+<body>
+
+<div id="loading">
+  <div class="logo">Vitality</div>
+  <div id="loading-bar-wrap"><div id="loading-bar"></div></div>
+  <div class="pct" id="loading-pct">0%</div>
+</div>
+
+<div id="scroll-container">
+  <div id="sticky-wrapper">
+    <canvas id="canvas"></canvas>
+    <div id="vignette"></div>
+
+    <!-- 1. Intro — cama desnuda → sábana (frames 1–121) -->
+    <div class="overlay" id="text-0">
+      <div class="box">
+        <div class="eyebrow">Vitality Life Balance</div>
+        <h2>Somos seres<br><em>bioeléctricos.</em></h2>
+        <div class="divider"></div>
+        <p>La Tierra emite electrones libres constantemente. Durante miles de años, los absorbimos al dormir en el suelo. Hoy, por primera vez, puedes recuperar esa conexión sin salir de tu cama.</p>
+      </div>
+    </div>
+
+    <!-- 1b. Intermedio — problema moderno (frames 65–121) -->
+    <div class="overlay center on-light" id="text-0b">
+      <div class="box">
+        <div class="eyebrow">El problema moderno</div>
+        <h2>Vivimos<br><em>desconectados.</em></h2>
+        <div class="divider"></div>
+        <p>Casas elevadas, suelas de goma, camas aisladas. La inflamación silenciosa, el sueño fragmentado y el estrés crónico tienen una causa común que nadie te ha contado.</p>
+      </div>
+    </div>
+
+    <!-- 2. Zoom hilos de plata (frames 122–242) -->
+    <div class="overlay right" id="text-1">
+      <div class="box">
+        <div class="eyebrow">Conexión a tierra</div>
+        <h2>Tu cuerpo acumula.<br><em>La Tierra descarga.</em></h2>
+        <div class="divider"></div>
+        <p>WiFi, sintéticos, aislamientos. Cada noche acumulamos carga electrostática positiva. El grounding abre la única vía natural de descarga: los electrones de la Tierra fluyen hacia ti, neutralizando el exceso bioeléctrico mientras duermes.</p>
+      </div>
+    </div>
+
+    <!-- 3. Pull back cama completa (frames 243–363) -->
+    <div class="overlay" id="text-2">
+      <div class="box">
+        <div class="eyebrow">Rendimiento bioeléctrico certificado</div>
+        <h2>46× más conductiva.<br><em>Menos de 1Ω de resistencia.</em></h2>
+        <div class="divider"></div>
+        <p>Plata pura al 99.9% tejida hilo a hilo en una red sin interrupciones. Los electrones de la Tierra alcanzan cada punto de tu cuerpo. Sin zonas muertas. Sin compromisos. Certificado ISO.</p>
+        <div class="stats">
+          <div class="stat"><span class="stat-value">99.9%</span><span class="stat-label">Plata pura</span></div>
+          <div class="stat"><span class="stat-value">46×</span><span class="stat-label">Más conductiva</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. Zoom parche conector (frames 364–484) -->
+    <div class="overlay center" id="text-4">
+      <div class="box">
+        <div class="eyebrow">Parche conector Vitality</div>
+        <h2>El punto donde<br><em>empieza el circuito</em></h2>
+        <div class="divider"></div>
+        <p>Dos conectores de presión fijan el cable a la sábana en segundos. Sin herramientas, sin instalación. El parche crea el puente bioeléctrico entre la Tierra y cada hilo de plata.</p>
+      </div>
+    </div>
+
+    <!-- 5a. Primer cable al parche (frames 485–530) -->
+    <div class="overlay" id="text-5">
+      <div class="box">
+        <div class="eyebrow">Conexión a tierra</div>
+        <h2>Primer cable.<br><em>La ruta de los electrones.</em></h2>
+        <div class="divider"></div>
+        <p>Este cable va del parche al adaptador EU y de ahí al enchufe. La toma de tierra del enchufe cierra el circuito bioeléctrico entre la Tierra y tu cuerpo. El camino comienza aquí.</p>
+      </div>
+    </div>
+
+    <!-- 5b. Segundo cable al parche (frames 530–565) -->
+    <div class="overlay bottom" id="text-5b">
+      <div class="box">
+        <div class="eyebrow">Circuito completo</div>
+        <h2>El segundo cable.<br><em>Para tus almohadas.</em></h2>
+        <div class="divider"></div>
+        <p>El parche tiene dos conectores: el primero va al enchufe, el segundo cierra el circuito con tus almohadas Vitality. Cabeza y cuerpo, grounded a la vez.</p>
+      </div>
+    </div>
+
+    <!-- 6. Transición cables bajan (frames 566–686) -->
+    <div class="overlay center" id="text-6t">
+      <div class="box">
+        <div class="eyebrow">3 metros de libertad</div>
+        <h2>El enchufe lejos.<br><em>No es un problema.</em></h2>
+        <div class="divider"></div>
+        <p>El cable mide 3 metros — suficiente para llegar a cualquier punto de la habitación. El circuito bioeléctrico recorre cada metro en silencio, invisible, constante.</p>
+      </div>
+    </div>
+
+    <!-- 7. Cables al adaptador EU (frames 687–807) -->
+    <div class="overlay" id="text-6">
+      <div class="box">
+        <div class="eyebrow">Adaptador EU incluido</div>
+        <h2>Cualquier enchufe.<br><em>Una sola solución.</em></h2>
+        <div class="divider"></div>
+        <p>El adaptador EU transforma cualquier enchufe estándar europeo con toma de tierra en dos salidas para los cables de grounding. Sin modificar la instalación. Plug & ground.</p>
+      </div>
+    </div>
+
+    <!-- 8. Adaptador al enchufe pared (frames 808–928) -->
+    <div class="overlay center lower" id="text-7">
+      <div class="box">
+        <div class="eyebrow">Circuito completo</div>
+        <h2>La Tierra entra<br><em>en tu habitación.</em></h2>
+        <div class="divider"></div>
+        <p>Con el adaptador enchufado, el circuito bioeléctrico está activo. Los electrones libres de la Tierra viajan por el cable, atraviesan los hilos de plata y alcanzan tu cuerpo mientras duermes. Cada noche.</p>
+      </div>
+    </div>
+
+    <!-- Tester Off → On (frames ~1148–1183) -->
+    <div class="overlay on-light" id="text-8a">
+      <div class="box">
+        <div class="eyebrow">Un gesto. Una sola vez.</div>
+        <h2>Desliza a On.<br><em>Comprueba. Retíralo.</em></h2>
+        <div class="divider"></div>
+        <p>El tester no forma parte del sistema de grounding. Su función es verificar que el circuito bioeléctrico está activo — una vez es suficiente. Después, desconéctalo. La sábana trabaja sola, en silencio, cada noche.</p>
+      </div>
+    </div>
+
+    <!-- Tester verde confirmado (frames ~1185–1258) -->
+    <div class="overlay on-light" id="text-8">
+      <div class="box">
+        <div class="eyebrow">Verificación instantánea</div>
+        <h2>Verde.<br><em>Conexión confirmada.</em></h2>
+        <div class="divider"></div>
+        <p>Este tester comprueba en segundos que la sábana conduce correctamente. La luz verde lo dice todo.</p>
+      </div>
+    </div>
+
+    <!-- 13. Tester comprobando sábana (frames 1293–1389) -->
+    <div class="overlay right on-light" id="text-9">
+      <div class="box">
+        <div class="eyebrow">Comprobación final</div>
+        <h2>Cada centímetro<br><em>de plata, activo.</em></h2>
+        <div class="divider"></div>
+        <p>Con un 10% de plata, los hilos están tan juntos que el tester detecta señal continua e ininterrumpida en toda la superficie. La diferencia se ve en verde.</p>
+        <div class="stats">
+          <div class="stat"><span class="stat-value">10%</span><span class="stat-label">Plata en tejido</span></div>
+          <div class="stat"><span class="stat-value">100%</span><span class="stat-label">Superficie activa</span></div>
+        </div>
+      </div>
+    </div>
+  </div><!-- /sticky-wrapper -->
+</div><!-- /scroll-container -->
+
+<script>
+  const canvas=document.getElementById("canvas"),ctx=canvas.getContext("2d"),totalFrames=1375,frames=new Array(1375);let loadedCount=0;function resize(){canvas.width=window.innerWidth,canvas.height=window.innerHeight}function drawFrame(t){const e=frames[t-1];if(!e||!e.complete)return;const a=Math.max(canvas.width/e.naturalWidth,canvas.height/e.naturalHeight),n=e.naturalWidth*a,i=e.naturalHeight*a;ctx.drawImage(e,(canvas.width-n)/2,(canvas.height-i)/2,n,i)}function setOpacity(t,e){const a=document.getElementById(t);a&&(a.style.opacity=Math.max(0,Math.min(1,e)).toFixed(3))}function smoothStep(t,e,a){const n=Math.max(0,Math.min(1,(a-t)/(e-t)));return n*n*(3-2*n)}function textOpacity(t,e,a,n,i){return t<e||t>i?0:t<=a?smoothStep(e,a,t):t>=n?1-smoothStep(n,i,t):1}function progressToFrame(t){const e=[[0,1],[.44,484],[.6,560],[.66,565],[1,1375]];for(let a=0;a<e.length-1;a++){const[n,i]=e[a],[o,c]=e[a+1];if(t<=o)return Math.round(i+(t-n)/(o-n)*(c-i))}return 1375}function preload(){for(let t=1;t<=1375;t++){const e=new Image;e.src=`frames/frame_${String(t).padStart(4,"0")}.webp`,e.onload=()=>{loadedCount++;const t=Math.round(loadedCount/1375*100);document.getElementById("loading-bar").style.width=t+"%",document.getElementById("loading-pct").textContent=t+"%",1375===loadedCount&&(document.getElementById("loading").style.transition="opacity 1s ease",document.getElementById("loading").style.opacity="0",setTimeout(()=>document.getElementById("loading").style.display="none",1e3),drawFrame(1),setOpacity("text-0",1))},frames[t-1]=e}}function applyProgress(a){const n=Math.max(1,Math.min(progressToFrame(a),1375));drawFrame(n),setOpacity("text-0",textOpacity(n,5,20,55,70)),setOpacity("text-0b",textOpacity(n,72,85,108,120)),setOpacity("text-1",textOpacity(n,130,145,220,236)),setOpacity("text-2",textOpacity(n,250,265,342,358)),setOpacity("text-4",textOpacity(n,372,387,462,478)),setOpacity("text-5",textOpacity(n,490,503,520,532)),setOpacity("text-5b",textOpacity(n,533,544,600,615)),setOpacity("text-6t",textOpacity(n,618,632,668,682)),setOpacity("text-6",textOpacity(n,694,709,786,802)),setOpacity("text-7",textOpacity(n,815,830,907,923)),setOpacity("text-8a",textOpacity(n,1148,1158,1175,1183)),setOpacity("text-8",textOpacity(n,933,945,985,998)),setOpacity("text-9",textOpacity(n,1300,1315,1365,1382))}resize(),window.addEventListener("resize",resize),window.addEventListener("scroll",()=>{const t=window.scrollY,e=document.getElementById("scroll-container").offsetHeight-window.innerHeight,a=Math.min(t/e,1);applyProgress(a)},{passive:true}),window.addEventListener("message",function(e){e.data&&"groundingScroll"===e.data.type&&applyProgress(Math.max(0,Math.min(1,e.data.progress)));}),preload();
+</script>
+</body>
+</html>
