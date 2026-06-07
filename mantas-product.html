@@ -225,22 +225,22 @@
 <div class="cursor-glow" id="cGlow"></div>
 
 <nav>
-  <a href="vitality-v7-test.html" class="nav-logo">
+  <a href="index.html" class="nav-logo">
     <div class="nav-logo-title">VITALITY</div>
     <div class="nav-logo-line"></div>
     <div class="nav-logo-sub">BIOHACKING · GROUNDING · BIENESTAR</div>
   </a>
   <ul class="nav-links">
-    <li><a href="vitality-v7-test.html">Home</a></li>
-    <li><a href="vitality-v7-test.html#productos">Productos</a></li>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#productos">Productos</a></li>
     <li><a href="grounding-vitality.html">Grounding</a></li>
   </ul>
   <a href="#" class="nav-cta" onclick="goCheckout(event)">Comprar</a>
 </nav>
 
 <div class="breadcrumb">
-  <a href="vitality-v7-test.html">Home</a><span>›</span>
-  <a href="vitality-v7-test.html#productos">Productos</a><span>›</span>
+  <a href="index.html">Home</a><span>›</span>
+  <a href="index.html#productos">Productos</a><span>›</span>
   <span style="color:var(--text)">Mantas Grounding</span>
 </div>
 
@@ -248,7 +248,7 @@
   <div class="gallery">
     <div class="gallery-main" id="galleryMain">
       <img id="mainImg" src="https://cdn.shopify.com/s/files/1/0998/7584/8540/files/VITALITY-62.jpg?v=1773664254" alt="Mantas Grounding">
-      <video id="mainVideo" src="mantas-promo.mov" controls playsinline loop></video>
+      <video id="mainVideo" src="mantas-promo.mp4" controls playsinline loop></video>
     </div>
     <div class="gallery-thumbs">
       <div class="gallery-thumb active" onclick="setImg(this,'https://cdn.shopify.com/s/files/1/0998/7584/8540/files/VITALITY-62.jpg?v=1773664254')"><img src="https://cdn.shopify.com/s/files/1/0998/7584/8540/files/VITALITY-62.jpg?v=1773664254" alt=""></div>
@@ -258,7 +258,7 @@
       <div class="gallery-thumb" onclick="setImg(this,'https://cdn.shopify.com/s/files/1/0998/7584/8540/files/VITALITY-59.jpg?v=1773664470')"><img src="https://cdn.shopify.com/s/files/1/0998/7584/8540/files/VITALITY-59.jpg?v=1773664470" alt=""></div>
       <div class="gallery-thumb" onclick="setVideo(this)">
         <div class="thumb-video-wrap">
-          <video src="mantas-promo.mov" muted playsinline preload="metadata"></video>
+          <video src="mantas-promo.mp4" muted playsinline preload="metadata"></video>
           <div class="thumb-play-icon"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
         </div>
       </div>
@@ -432,8 +432,8 @@
 <footer>
   <div class="footer-logo">Vitality Life Balance</div>
   <div class="footer-links">
-    <a href="vitality-v7-test.html">Home</a>
-    <a href="vitality-v7-test.html#productos">Productos</a>
+    <a href="index.html">Home</a>
+    <a href="index.html#productos">Productos</a>
     <a href="grounding-vitality.html">Grounding</a>
     <a href="legal.html">Legal</a>
   </div>
@@ -497,7 +497,7 @@ function selectColor(btn,val,label){
   document.querySelectorAll('.variant-options').item(1).querySelectorAll('.variant-btn').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');sel.color=val;document.getElementById('colorLabel').textContent=label;updateVariant();
 }
-function goCheckout(e){e.preventDefault();const id=document.getElementById('buyBtn').dataset.variantId||'57017671942492';window.location.href=`https://vitality-10143.myshopify.com/cart/${id}:1`;}
+function goCheckout(e){e.preventDefault();const id=document.getElementById('buyBtn').dataset.variantId||'57017671942492';window.location.href=`https://tienda.vitalitylifebalance.com/cart/${id}:1`;}
 document.getElementById('buyBtn').dataset.variantId='57017671942492';
 function setImg(thumb,src){
   const v=document.getElementById('mainVideo');

@@ -214,22 +214,22 @@
 <div class="cursor-glow" id="cGlow"></div>
 
 <nav>
-  <a href="vitality-v7-test.html" class="nav-logo">
+  <a href="index.html" class="nav-logo">
     <div class="nav-logo-title">VITALITY</div>
     <div class="nav-logo-line"></div>
     <div class="nav-logo-sub">BIOHACKING · GROUNDING · BIENESTAR</div>
   </a>
   <ul class="nav-links">
-    <li><a href="vitality-v7-test.html">Home</a></li>
-    <li><a href="vitality-v7-test.html#productos">Productos</a></li>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#productos">Productos</a></li>
     <li><a href="grounding-vitality.html">Grounding</a></li>
   </ul>
-  <a href="https://vitality-10143.myshopify.com/cart/57017405407580:1" class="nav-cta">Comprar</a>
+  <a href="https://tienda.vitalitylifebalance.com/cart/57017405407580:1" class="nav-cta">Comprar</a>
 </nav>
 
 <div class="breadcrumb">
-  <a href="vitality-v7-test.html">Home</a><span>›</span>
-  <a href="vitality-v7-test.html#productos">Productos</a><span>›</span>
+  <a href="index.html">Home</a><span>›</span>
+  <a href="index.html#productos">Productos</a><span>›</span>
   <span style="color:var(--text)">Esterilla Grounding</span>
 </div>
 
@@ -238,6 +238,7 @@
     <div class="gallery-main" id="galleryMain">
       <img id="mainImg" src="https://cdn.shopify.com/s/files/1/0998/7584/8540/files/VITALITY-15.jpg?v=1773661918" alt="Esterilla Grounding">
       <video id="mainVideo" controls playsinline loop></video>
+      <button id="videoCloseBtn" onclick="closeVideo()" style="display:none;position:absolute;top:0.75rem;right:0.75rem;z-index:20;background:rgba(0,0,0,0.6);border:1px solid rgba(255,255,255,0.2);color:#fff;width:36px;height:36px;border-radius:50%;font-size:1.1rem;cursor:pointer;line-height:1;backdrop-filter:blur(4px);">✕</button>
     </div>
     <div class="gallery-thumbs">
       <div class="gallery-thumb active" onclick="setImg(this,'https://cdn.shopify.com/s/files/1/0998/7584/8540/files/VITALITY-15.jpg?v=1773661918')"><img src="https://cdn.shopify.com/s/files/1/0998/7584/8540/files/VITALITY-15.jpg?v=1773661918" alt=""></div>
@@ -245,15 +246,9 @@
       <div class="gallery-thumb" onclick="setImg(this,'https://cdn.shopify.com/s/files/1/0998/7584/8540/files/VITALITY-24.jpg?v=1773661998')"><img src="https://cdn.shopify.com/s/files/1/0998/7584/8540/files/VITALITY-24.jpg?v=1773661998" alt=""></div>
       <div class="gallery-thumb" onclick="setImg(this,'https://cdn.shopify.com/s/files/1/0998/7584/8540/files/VITALITY-21.jpg?v=1773661996')"><img src="https://cdn.shopify.com/s/files/1/0998/7584/8540/files/VITALITY-21.jpg?v=1773661996" alt=""></div>
       <div class="gallery-thumb" onclick="setImg(this,'https://cdn.shopify.com/s/files/1/0998/7584/8540/files/VITALITY-26.jpg?v=1773662073')"><img src="https://cdn.shopify.com/s/files/1/0998/7584/8540/files/VITALITY-26.jpg?v=1773662073" alt=""></div>
-      <div class="gallery-thumb" onclick="setVideo(this,'esterilla-promo1.mov')">
+      <div class="gallery-thumb" onclick="setVideo(this,'esterilla-promo1.mp4')">
         <div class="thumb-video-wrap">
-          <video src="esterilla-promo1.mov" muted playsinline preload="metadata"></video>
-          <div class="thumb-play-icon"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
-        </div>
-      </div>
-      <div class="gallery-thumb" onclick="setVideo(this,'esterilla-promo2.mov')">
-        <div class="thumb-video-wrap">
-          <video src="esterilla-promo2.mov" muted playsinline preload="metadata"></video>
+          <video src="esterilla-promo1.mp4" muted playsinline preload="metadata"></video>
           <div class="thumb-play-icon"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
         </div>
       </div>
@@ -285,7 +280,7 @@
       <div class="urgency-stock"><span class="urgency-dot"></span><span>Solo quedan <strong>4 unidades</strong> disponibles</span></div>
       <div class="urgency-ship"><span>⏱</span><span>Pide en las próximas <strong id="urgencyTimer">--:--:--</strong> y recibes <strong>mañana</strong></span></div>
     </div>
-    <a href="https://vitality-10143.myshopify.com/cart/57017405407580:1" class="btn-buy"><span>Comprar ahora</span></a>
+    <a href="https://tienda.vitalitylifebalance.com/cart/57017405407580:1" class="btn-buy"><span>Comprar ahora</span></a>
     <a href="grounding-vitality.html" class="btn-buy-ghost">Ver más sobre Grounding</a>
 
     <div class="trust-badges">
@@ -409,8 +404,8 @@
 <footer>
   <div class="footer-logo">Vitality Life Balance</div>
   <div class="footer-links">
-    <a href="vitality-v7-test.html">Home</a>
-    <a href="vitality-v7-test.html#productos">Productos</a>
+    <a href="index.html">Home</a>
+    <a href="index.html#productos">Productos</a>
     <a href="grounding-vitality.html">Grounding</a>
     <a href="legal.html">Legal</a>
   </div>
@@ -430,9 +425,18 @@ function setVideo(thumb,src){
   document.querySelectorAll('.gallery-thumb').forEach(t=>t.classList.remove('active'));
   thumb.classList.add('active');
   document.getElementById('galleryMain').classList.add('is-video');
+  document.getElementById('videoCloseBtn').style.display='block';
   v.src=src;
   v.currentTime=0;
   v.play();
+}
+function closeVideo(){
+  const v=document.getElementById('mainVideo');
+  v.pause();
+  document.getElementById('galleryMain').classList.remove('is-video');
+  document.getElementById('videoCloseBtn').style.display='none';
+  const firstThumb=document.querySelector('.gallery-thumb');
+  firstThumb.classList.add('active');
 }
 </script>
 
@@ -556,22 +560,28 @@ function setVideo(thumb,src){
       return s.age<s.maxAge;
     });
   }
+  var crisisVisible=false,crisisRaf=null;
   function frame(ts){
+    if(!crisisVisible){crisisRaf=null;return;}
     T=ts*0.001;
     ctx.clearRect(0,0,W,H);
     drawGrid();drawSineWaves(T);drawTowerWaves(T);
     if(T-lastSpawn>0.18){spawnRadical();if(Math.random()>0.5)spawnRadical();lastSpawn=T;}
     updateRadicals();drawRadicals();
-    requestAnimationFrame(frame);
+    crisisRaf=requestAnimationFrame(frame);
   }
-  resize();requestAnimationFrame(frame);
+  resize();
   window.addEventListener('resize',function(){resize();});
-  new IntersectionObserver(function(e){if(e[0].isIntersecting)resize();},{threshold:0.1}).observe(cv.parentElement);
+  new IntersectionObserver(function(e){
+    crisisVisible=e[0].isIntersecting;
+    if(crisisVisible&&!crisisRaf)crisisRaf=requestAnimationFrame(frame);
+    if(crisisVisible)resize();
+  },{threshold:0.1}).observe(cv.parentElement);
 })();
 </script>
 
 <script>
-(function(){const dot=document.getElementById('cDot'),ring=document.getElementById('cRing'),glow=document.getElementById('cGlow');if(!dot||!ring||!glow)return;const cvs=document.createElement('canvas');cvs.style.cssText='position:fixed;inset:0;width:100vw;height:100vh;pointer-events:none;z-index:99996;';cvs.width=window.innerWidth;cvs.height=window.innerHeight;document.body.appendChild(cvs);const ctx=cvs.getContext('2d');window.addEventListener('resize',()=>{cvs.width=window.innerWidth;cvs.height=window.innerHeight;});let mx=0,my=0,pmx=0,pmy=0,dvx=0,dvy=0,rx=0,ry=0,rSize=36,hovering=false;const particles=[];document.addEventListener('mousemove',e=>{pmx=mx;pmy=my;mx=e.clientX;my=e.clientY;dvx=mx-pmx;dvy=my-pmy;hovering=!!e.target.closest('a,button,.gallery-thumb,[role="button"]');const speed=Math.sqrt(dvx*dvx+dvy*dvy);if(speed>3){for(let i=0;i<Math.min(Math.floor(speed*0.4),4);i++){particles.push({x:mx+(Math.random()-0.5)*4,y:my+(Math.random()-0.5)*4,vx:(Math.random()-0.5)*1.5-dvx*0.08,vy:(Math.random()-0.5)*1.5-dvy*0.08,r:Math.random()*2.5+0.5,life:1,decay:0.045+Math.random()*0.03,hue:175+Math.random()*25});}}glow.style.left=mx+'px';glow.style.top=my+'px';});document.addEventListener('mouseleave',()=>{dot.style.opacity='0';ring.style.opacity='0';});document.addEventListener('mouseenter',()=>{dot.style.opacity='1';ring.style.opacity='1';});function lerp(a,b,t){return a+(b-a)*t;}function render(){ctx.clearRect(0,0,cvs.width,cvs.height);for(let i=particles.length-1;i>=0;i--){const p=particles[i];p.x+=p.vx;p.y+=p.vy;p.vy+=0.04;p.life-=p.decay;if(p.life<=0){particles.splice(i,1);continue;}ctx.globalAlpha=p.life*0.75;ctx.fillStyle=`hsl(${p.hue},100%,65%)`;ctx.shadowColor=`hsl(${p.hue},100%,65%)`;ctx.shadowBlur=8;ctx.beginPath();ctx.arc(p.x,p.y,p.r*p.life,0,Math.PI*2);ctx.fill();}ctx.globalAlpha=1;ctx.shadowBlur=0;dot.style.left=mx+'px';dot.style.top=my+'px';const speed=Math.sqrt(dvx*dvx+dvy*dvy);const g=Math.min(speed*0.5,10);dot.style.filter=g>1?`drop-shadow(${(-dvx*0.5).toFixed(1)}px ${(-dvy*0.5).toFixed(1)}px 0 rgba(255,0,180,${Math.min(g/10,0.85).toFixed(2)})) drop-shadow(${(dvx*0.5).toFixed(1)}px ${(dvy*0.5).toFixed(1)}px 0 rgba(0,255,210,${Math.min(g/10,0.85).toFixed(2)}))`:'none';dvx*=0.82;dvy*=0.82;rx=lerp(rx,mx,0.1);ry=lerp(ry,my,0.1);const targetSize=hovering?58:36;rSize=lerp(rSize,targetSize,0.12);ring.style.left=rx+'px';ring.style.top=ry+'px';ring.style.width=rSize+'px';ring.style.height=rSize+'px';ring.style.borderColor=hovering?'rgba(34,211,238,0.7)':'rgba(34,211,238,0.28)';ring.style.boxShadow=hovering?'0 0 18px rgba(34,211,238,0.25)':'none';requestAnimationFrame(render);}render();})();
+(function(){const dot=document.getElementById('cDot'),ring=document.getElementById('cRing'),glow=document.getElementById('cGlow');if(!dot||!ring||!glow)return;let mx=0,my=0,rx=0,ry=0,rSize=36,hovering=false;document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;hovering=!!e.target.closest('a,button,.gallery-thumb,[role="button"]');dot.style.left=mx+'px';dot.style.top=my+'px';glow.style.left=mx+'px';glow.style.top=my+'px';});document.addEventListener('mouseleave',()=>{dot.style.opacity='0';ring.style.opacity='0';});document.addEventListener('mouseenter',()=>{dot.style.opacity='1';ring.style.opacity='1';});function lerp(a,b,t){return a+(b-a)*t;}function render(){rx=lerp(rx,mx,0.12);ry=lerp(ry,my,0.12);const targetSize=hovering?52:36;rSize=lerp(rSize,targetSize,0.12);ring.style.left=rx+'px';ring.style.top=ry+'px';ring.style.width=rSize+'px';ring.style.height=rSize+'px';ring.style.borderColor=hovering?'rgba(34,211,238,0.7)':'rgba(34,211,238,0.28)';requestAnimationFrame(render);}render();})();
 </script>
 
 <script>
@@ -662,11 +672,13 @@ function setVideo(thumb,src){
       }
     }
   }
+  var bVisible=false,bRaf=null;
   function animate(){
+    if(!bVisible){bRaf=null;return;}
     tp+=(ts-tp)*.04;if(Math.abs(ts-tp)<.001)tp=ts;
     if(cells.length)update();
     draw();
-    requestAnimationFrame(animate);
+    bRaf=requestAnimationFrame(animate);
   }
   window.switchBV=function(s){
     ts=s==='con'?1:0;
@@ -677,10 +689,11 @@ function setVideo(thumb,src){
       ?'Glóbulos rojos separados y acelerados. Oxigenación óptima y mayor rendimiento en la práctica.'
       :'Glóbulos rojos aglutinados, lentos y apelotonados. Mala oxigenación muscular durante la práctica.';
   };
-  resize();init();animate();
+  resize();init();
   window.addEventListener('resize',function(){resize();cells=[];init();});
   new IntersectionObserver(function(entries){
-    if(entries[0].isIntersecting){resize();cells=[];init();}
+    bVisible=entries[0].isIntersecting;
+    if(bVisible){resize();cells=[];init();if(!bRaf)bRaf=requestAnimationFrame(animate);}
   },{threshold:.1}).observe(cv.parentElement);
   setTimeout(function(){if(!cells.length){resize();init();}},400);
 })();

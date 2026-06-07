@@ -2,9 +2,9 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-  <link rel="icon" href="favicon.png?v=2" type="image/png">
-  <link rel="shortcut icon" href="favicon.png?v=2">
-  <link rel="apple-touch-icon" href="favicon.png?v=2">
+  <link rel="icon" href="/favicon.png?v=2" type="image/png">
+  <link rel="shortcut icon" href="/favicon.png?v=2">
+  <link rel="apple-touch-icon" href="/favicon.png?v=2">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sábanas Grounding con Plata — Earthing Científico | Vitality Life Balance</title>
     <meta name="description" content="Sábanas de grounding con 5% de plata conductora. Reduce inflamación, mejora el sueño y reconecta con la energía de la Tierra. Respaldado por +20 estudios científicos. Envío a España y Europa.">
@@ -1591,12 +1591,12 @@
         <div class="nav-container">
             <div class="logo">GROUNDING</div>
             <div class="nav-links">
-                <a href="vitality-v7-test.html">Home</a>
+                <a href="index.html">Home</a>
                 <a href="#science" data-i18n="navScience">Ciencia</a>
                 <a href="#benefits" data-i18n="navBenefits">Beneficios</a>
                 <a href="#products" data-i18n="navProducts">Productos</a>
-                <a href="#faq" data-i18n="navFaq">Preguntas</a>
-                <button class="btn-cta" data-i18n="navBuy" onclick="window.location.href='grounding-productos.html'">Comprar ahora</button>
+                <a href="#how-to-connect" data-i18n="navFaq">Preguntas</a>
+                <button class="btn-cta" data-i18n="navBuy" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">Comprar ahora</button>
             </div>
             <button class="grd-hamburger" id="grdHamburger" aria-label="Menú" aria-expanded="false">
                 <span></span><span></span><span></span>
@@ -1607,12 +1607,12 @@
     <!-- Mobile menu overlay Grounding -->
     <div class="grd-mobile-menu" id="grdMobileMenu" role="dialog" aria-label="Menú de navegación">
         <button class="grd-mobile-menu-close" id="grdMenuClose" aria-label="Cerrar menú">✕</button>
-        <a href="vitality-v7-test.html" onclick="closeGrdMenu()">Home</a>
+        <a href="index.html" onclick="closeGrdMenu()">Home</a>
         <a href="#science" onclick="closeGrdMenu()">Ciencia</a>
         <a href="#benefits" onclick="closeGrdMenu()">Beneficios</a>
         <a href="#products" onclick="closeGrdMenu()">Productos</a>
-        <a href="#faq" onclick="closeGrdMenu()">Preguntas</a>
-        <button class="grd-mob-cta" onclick="closeGrdMenu();window.location.href='grounding-productos.html'">Comprar ahora</button>
+        <a href="#how-to-connect" onclick="closeGrdMenu()">Preguntas</a>
+        <button class="grd-mob-cta" onclick="closeGrdMenu();document.getElementById('products').scrollIntoView({behavior:'smooth'})">Comprar ahora</button>
     </div>
 
     <!-- HERO SECTION -->
@@ -1671,7 +1671,7 @@
                 <p class="hero-subtitle" data-i18n="heroSubtitle">Convierte cada noche en una sesión de sanación. Reduce la inflamación, mejora el sueño y reconecta con la energía curativa de la Tierra.</p>
                 <p class="hero-tagline" data-i18n="heroTagline">+25 estudios científicos · Plata conductora · Sanación pasiva</p>
                 <div class="hero-buttons">
-                    <button class="btn-primary btn-magnetic" data-i18n="heroBtnProducts" onclick="window.location.href='grounding-productos.html'">Ver productos</button>
+                    <button class="btn-primary btn-magnetic" data-i18n="heroBtnProducts" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">Ver productos</button>
                     <button class="btn-secondary btn-magnetic" data-i18n="heroBtnScience" onclick="document.getElementById('science').scrollIntoView({behavior:'smooth'})">Descubre la ciencia</button>
                 </div>
             </div>
@@ -2183,7 +2183,7 @@
                         </div>
                         <div class="card-foot">
                             <span class="card-price">160<span class="c">,00 €</span></span>
-                            <button class="card-btn" onclick="window.location.href='https://vitality-10143.myshopify.com/cart/57017405407580:1'">Comprar Ya →</button>
+                            <button class="card-btn" onclick="window.location.href='https://tienda.vitalitylifebalance.com/cart/57017405407580:1'">Comprar Ya →</button>
                         </div>
                     </div>
                 </div>
@@ -2625,7 +2625,7 @@
           100% { background-position: 200% 50%; }
         }
       </style>
-      <button class="cta-glow-btn" onclick="window.location.href='grounding-productos.html'">
+      <button class="cta-glow-btn" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
         Comprar Ya
       </button>
     </div>
@@ -2712,9 +2712,6 @@
                     <a href="#faq" data-i18n="footerFaq">Preguntas frecuentes</a>
                 </div>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <p data-i18n="footerCopy">&copy; 2026 GROUNDING. Todos los derechos reservados. | Contacto: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="523a373e3e3d1235203d273c363b3c357c373320263a">[email&#160;protected]</a></p>
         </div>
     </footer>
 
@@ -3978,7 +3975,7 @@ function updateSabana(size, pct) {
 }
 function goSabanaCart() {
     var id = VARIANTS.sabana[sabanaSize][sabanaPct].id;
-    window.location.href = 'https://vitality-10143.myshopify.com/cart/' + id + ':1';
+    window.location.href = 'https://tienda.vitalitylifebalance.com/cart/' + id + ':1';
 }
 
 // --- ALMOHADAS ---
@@ -3991,7 +3988,7 @@ function updateAlmohadas(pct) {
 }
 function goAlmohadasCart() {
     var id = VARIANTS.almohadas[almohadasPct].id;
-    window.location.href = 'https://vitality-10143.myshopify.com/cart/' + id + ':2';
+    window.location.href = 'https://tienda.vitalitylifebalance.com/cart/' + id + ':2';
 }
 
 // --- MANTAS ---
@@ -4042,7 +4039,7 @@ function updateMantas(size, color) {
 
 function goMantasCart() {
     var id = MANTAS[mantasSize].colors[mantasColor].id;
-    window.location.href = 'https://vitality-10143.myshopify.com/cart/' + id + ':1';
+    window.location.href = 'https://tienda.vitalitylifebalance.com/cart/' + id + ':1';
 }
 
 document.addEventListener('DOMContentLoaded', function() { renderMantasColors(); });
@@ -4064,7 +4061,7 @@ function updateBundle(size, pct) {
 function goBundleCart() {
     var sId = VARIANTS.sabana[bundleSize][bundlePct].id;
     var aId = VARIANTS.almohadas[bundlePct].id;
-    window.location.href = 'https://vitality-10143.myshopify.com/cart/' + sId + ':1,' + aId + ':2';
+    window.location.href = 'https://tienda.vitalitylifebalance.com/cart/' + sId + ':1,' + aId + ':2';
 }
 </script>
 
