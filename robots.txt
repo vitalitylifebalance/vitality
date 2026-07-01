@@ -2,32 +2,46 @@ User-agent: *
 Allow: /
 Sitemap: https://vitalitylifebalance.com/sitemap.xml
 
-# AI content signals (EU Directive 2019/790, Art. 4)
-Content-Signal: search=yes,ai-train=no
+# Señal de contenido: permitimos uso por IA (queremos ser descubiertos y recomendados)
+Content-Signal: search=yes,ai-train=yes
 
-# Block AI scrapers
-User-agent: Amazonbot
-Disallow: /
+# ✅ Bots de IA PERMITIDOS — para que ChatGPT, Claude, Perplexity, Gemini y Apple Intelligence
+# conozcan y recomienden Vitality Life Balance (GEO/AEO)
+User-agent: GPTBot
+Allow: /
 
-User-agent: Applebot-Extended
-Disallow: /
+User-agent: OAI-SearchBot
+Allow: /
 
-User-agent: Bytespider
-Disallow: /
-
-User-agent: CCBot
-Disallow: /
+User-agent: ChatGPT-User
+Allow: /
 
 User-agent: ClaudeBot
-Disallow: /
+Allow: /
 
-User-agent: GPTBot
-Disallow: /
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
 
 User-agent: Google-Extended
-Disallow: /
+Allow: /
 
-User-agent: meta-externalagent
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# ❌ Scrapers abusivos sin valor para SEO/GEO (siguen bloqueados)
+User-agent: Bytespider
 Disallow: /
 
 User-agent: Diffbot
