@@ -255,18 +255,27 @@ nav.scrolled{background:rgba(5,10,18,0.97);border-color:rgba(0,119,182,0.15)}
 .answer-box p{font-size:1.05rem;color:var(--text);line-height:1.75;margin-bottom:0 !important}
 
 /* COMPARISON TABLE */
-.table-wrap{overflow-x:auto;margin:32px 0 40px;border-radius:var(--r2);border:1px solid rgba(0,119,182,0.15)}
-.comp-table{width:100%;border-collapse:collapse;font-size:0.9rem}
+.table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:32px 0 40px;border-radius:var(--r2);border:1px solid rgba(0,119,182,0.15)}
+.comp-table{width:100%;border-collapse:collapse;font-size:0.88rem;table-layout:fixed}
 .comp-table thead tr{background:rgba(0,119,182,0.12)}
-.comp-table th{padding:16px 20px;text-align:left;font-family:var(--font2);font-weight:600;font-size:0.8rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--accent4);border-bottom:1px solid rgba(0,119,182,0.2)}
-.comp-table td{padding:14px 20px;border-bottom:1px solid rgba(0,119,182,0.07);color:var(--text2);vertical-align:top;line-height:1.55}
+.comp-table th{padding:14px 14px;text-align:left;font-family:var(--font2);font-weight:600;font-size:0.76rem;letter-spacing:0.04em;text-transform:uppercase;color:var(--accent4);border-bottom:1px solid rgba(0,119,182,0.2)}
+.comp-table td{padding:13px 14px;border-bottom:1px solid rgba(0,119,182,0.07);color:var(--text2);vertical-align:top;line-height:1.5;word-wrap:break-word;overflow-wrap:break-word;hyphens:auto}
+.comp-table th:nth-child(1),.comp-table td:nth-child(1){width:24%}
+.comp-table th:nth-child(2),.comp-table td:nth-child(2){width:30%}
+.comp-table th:nth-child(3),.comp-table td:nth-child(3){width:30%}
+.comp-table th:nth-child(4),.comp-table td:nth-child(4){width:16%}
 .comp-table tr:last-child td{border-bottom:none}
 .comp-table tr:hover td{background:rgba(0,119,182,0.04)}
-.comp-table td:first-child{color:var(--text3);font-size:0.8rem;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;white-space:nowrap}
-.comp-table .val-silver{color:#48CAE4;font-weight:600;font-family:var(--mono)}
-.comp-table .val-steel{color:var(--text3);font-family:var(--mono)}
-.comp-table .win-silver{color:#48CAE4}
-.comp-table .win-steel{color:#8BA8C8}
+.comp-table td:first-child{color:var(--text3);font-size:0.78rem;font-weight:600;text-transform:uppercase;letter-spacing:0.04em}
+.comp-table .val-silver{color:#48CAE4;font-weight:600}
+.comp-table .val-steel{color:var(--text3)}
+.comp-table .win-silver{color:#48CAE4;font-weight:700}
+.comp-table .win-steel{color:#8BA8C8;font-weight:700}
+@media(max-width:640px){
+  .comp-table{font-size:0.78rem}
+  .comp-table th{padding:10px 8px;font-size:0.66rem}
+  .comp-table td{padding:10px 8px}
+}
 
 /* CONDUCTIVITY VISUAL BAR */
 .cond-visual{margin:32px 0 40px}
