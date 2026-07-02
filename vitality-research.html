@@ -598,6 +598,7 @@ footer{background:var(--bg2);padding:60px 5%;border-top:1px solid rgba(0,119,182
         <button class="tab-btn" onclick="filterResearch('muscle')">Músculo</button>
         <button class="tab-btn" onclick="filterResearch('neuro')">Neurología</button>
         <button class="tab-btn" onclick="filterResearch('meta')">Metabolismo</button>
+        <button class="tab-btn" onclick="filterResearch('women')">Menopausia</button>
       </div>
       <div class="research-grid" id="researchGrid"></div>
     </div>
@@ -627,6 +628,29 @@ footer{background:var(--bg2);padding:60px 5%;border-top:1px solid rgba(0,119,182
       <p class="section-desc" data-i18n="section_desc_biohack">Potencia los efectos del grounding combinándolo con estas técnicas respaldadas por investigación de vanguardia. Desliza para explorar.</p>
       <div class="biohacking-scroller" id="biohackingScroller"></div>
       <div class="scroll-hint"><span data-i18n="scroll_hint">Desliza para ver más</span> <i data-lucide="arrow-right" class="lc"></i></div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICULOS -->
+<section id="articulos">
+  <div class="section-inner">
+    <div class="sparkle-box">
+      <div class="section-tag">Artículos</div>
+      <h2 class="section-title">Guías y <span>Comparativas</span></h2>
+      <p class="section-desc">Análisis en profundidad para elegir bien tu equipo de grounding.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;max-width:900px;margin:2.5rem auto 0">
+        <a href="plata-vs-acero-grounding.html" style="text-decoration:none;background:rgba(255,255,255,0.03);border:1px solid rgba(0,188,212,0.18);border-radius:16px;padding:1.7rem;display:block">
+          <div style="font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:#48CAE4;margin-bottom:0.7rem">Ciencia de materiales</div>
+          <h3 style="color:#E0EAF0;font-size:1.15rem;margin-bottom:0.6rem;line-height:1.3">Plata vs Acero Inoxidable en Grounding</h3>
+          <p style="color:#8A9BAA;font-size:0.9rem;line-height:1.6">La comparativa técnica definitiva: por qué la plata conduce ~45× más que el acero. Datos, estudios y tabla completa →</p>
+        </a>
+        <a href="sabanas-grounding-opiniones-reddit.html" style="text-decoration:none;background:rgba(255,255,255,0.03);border:1px solid rgba(0,188,212,0.18);border-radius:16px;padding:1.7rem;display:block">
+          <div style="font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:#48CAE4;margin-bottom:0.7rem">Opiniones</div>
+          <h3 style="color:#E0EAF0;font-size:1.15rem;margin-bottom:0.6rem;line-height:1.3">Sábanas Grounding de Plata: Opiniones Reales (Reddit y Foros)</h3>
+          <p style="color:#8A9BAA;font-size:0.9rem;line-height:1.6">Qué dice la comunidad, el escepticismo honesto, plata vs acero y nuestro análisis con datos →</p>
+        </a>
+      </div>
     </div>
   </div>
 </section>
@@ -1859,7 +1883,8 @@ const researchData = [
   {category:'neuro',icon:'shield',title:'Protección Contra Campo Electromagnético',desc:'Grounding reduce el voltaje corporal inducido por EMF en un 80-90%.',tags:['EMF','Radiación'],expanded:'Mediciones directas muestran que cuerpos grounded tienen voltaje significativamente menor ante campos electromagnéticos.',link:'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3265077/',doi:'10.4172/2165-8048.1000101'},
   {category:'meta',icon:'thermometer',title:'Regulación de Glucosa en Sangre',desc:'Mejora en sensibilidad a insulina y reducción en picos de glucosa postprandial.',tags:['Glucosa','Insulina'],expanded:'Estudio con 20 participantes con prediabetes mostró que grounding reduce picos de glucosa en 18-23%.',link:'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6211511/',doi:'10.1089/acm.2016.0021'},
   {category:'meta',icon:'flame',title:'Aceleración del Metabolismo Basal',desc:'Aumento documentado en tasa metabólica basal tras grounding regular.',tags:['Metabolismo','TMB'],expanded:'Calorimetría indirecta muestra aumento del gasto energético en aproximadamente 8-12%.',link:'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4378297/',doi:'10.1089/acm.2018.0445'},
-  {category:'meta',icon:'activity',title:'Mejora en Capacidad Digestiva',desc:'Reducción de síntomas digestivos y mejora en motilidad gastrointestinal.',tags:['Digestión','Microbioma'],expanded:'El grounding mejora la función parasimpática del sistema digestivo, aumentando secreción de enzimas digestivas.',link:'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3265077/',doi:'10.1089/acm.2020.0087'}
+  {category:'meta',icon:'activity',title:'Mejora en Capacidad Digestiva',desc:'Reducción de síntomas digestivos y mejora en motilidad gastrointestinal.',tags:['Digestión','Microbioma'],expanded:'El grounding mejora la función parasimpática del sistema digestivo, aumentando secreción de enzimas digestivas.',link:'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3265077/',doi:'10.1089/acm.2020.0087'},
+  {category:'women',icon:'flower-2',title:'Alivio de Síntomas de la Menopausia',desc:'Un estudio de 2025 halló que caminar descalzo (una forma de grounding) durante 12 semanas mejoró significativamente los síntomas menopáusicos, el sueño, el estrés y la calidad de vida.',tags:['Menopausia','Sueño','Estrés','Calidad de Vida'],expanded:'Estudio cuasi-experimental con 60 mujeres de 45 a 65 años (Kim &amp; Lee, 2025, revista Healthcare). El grupo que caminó descalzo 3 veces por semana durante 12 semanas mejoró de forma significativa en la Menopause Rating Scale (síntomas), la calidad del sueño, el estrés y la calidad de vida frente al grupo de control. Nota metodológica: caminar descalzo combina el contacto con la Tierra y el ejercicio físico, por lo que los propios autores piden ensayos clínicos aleatorizados para aislar cuánto del beneficio corresponde específicamente al grounding.',link:'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12652608/',doi:'10.3390/healthcare13222836'}
 ];
 
 const audienceData = [
