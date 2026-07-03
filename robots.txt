@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /drafts/
 Sitemap: https://vitalitylifebalance.com/sitemap.xml
 
 # Señal de contenido: permitimos uso por IA (queremos ser descubiertos y recomendados)

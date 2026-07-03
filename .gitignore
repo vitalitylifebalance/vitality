@@ -10,3 +10,6 @@ COMPLIANCE-AUDIT.md
 GOOGLE-BUSINESS.md
 SEO-KEYWORDS.md
 .wrangler/
+
+# Borradores de articulos — se publican via publish.py, nunca directamente
+drafts/
