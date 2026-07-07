@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="/favicon.png?v=2" type="image/png">
+  <link rel="shortcut icon" href="/favicon.png?v=2">
+  <link rel="apple-touch-icon" href="/favicon.png?v=2">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Legal Notice and Privacy Policy — Vitality Life Balance</title>
+  <meta name="description" content="Legal notice, privacy policy and terms of use for Vitality Life Balance. Information on data processing, cookies and purchase conditions.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://vitalitylifebalance.com/en/legal.html">
+  <link rel="alternate" hreflang="es" href="https://vitalitylifebalance.com/legal.html">
+  <link rel="alternate" hreflang="en" href="https://vitalitylifebalance.com/en/legal.html">
+  <link rel="alternate" hreflang="x-default" href="https://vitalitylifebalance.com/legal.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0A0A0A;
+      --surface: #111111;
+      --border: rgba(255,255,255,0.08);
+      --cyan: #00BCD4;
+      --cyan-dim: rgba(0,188,212,0.15);
+      --text: #E0E0E0;
+      --text-dim: #888;
+      --white: #FFFFFF;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+  cursor: none;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+
+    /* NAV */
+    .top-bar {
+      background: rgba(10,10,10,0.95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 0 24px;
+    }
+
+    .top-bar-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 0;
+      flex-wrap: wrap;
+    }
+
+    .logo-link {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--white);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+
+    .logo-link span { color: var(--cyan); }
+
+    .nav-tabs {
+      display: flex;
+      gap: 4px;
+      flex-wrap: wrap;
+    }
+
+    .nav-tab {
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-dim);
+      text-decoration: none;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .nav-tab:hover, .nav-tab.active {
+      background: var(--cyan-dim);
+      color: var(--cyan);
+    }
+
+    /* HERO */
+    .page-hero {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 24px 40px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .page-hero h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(28px, 5vw, 42px);
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+
+    .page-hero p {
+      color: var(--text-dim);
+      font-size: 14px;
+    }
+
+    .page-hero p strong { color: var(--cyan); }
+
+    /* SECTIONS */
+    .legal-section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 24px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .legal-section:last-child { border-bottom: none; }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(22px, 4vw, 32px);
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 32px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .legal-section h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--white);
+      margin: 32px 0 12px;
+    }
+
+    .legal-section h3:first-of-type { margin-top: 0; }
+
+    .legal-section p {
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+
+    .legal-section ul, .legal-section ol {
+      padding-left: 20px;
+      margin-bottom: 16px;
+    }
+
+    .legal-section li {
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .legal-section a {
+      color: var(--cyan);
+      text-decoration: none;
+    }
+
+    .legal-section a:hover { text-decoration: underline; }
+
+    @property --border-angle {
+      syntax: '<angle>';
+      initial-value: 0deg;
+      inherits: false;
+    }
+
+    @keyframes border-spin {
+      to { --border-angle: 360deg; }
+    }
+
+    .info-box,
+    .warning-box {
+      position: relative;
+      background: rgba(255,255,255,0.02);
+      border-radius: 16px;
+      padding: 20px 24px;
+      margin: 24px 0;
+      isolation: isolate;
+    }
+
+    .info-box::before,
+    .warning-box::before {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      border-radius: 17px;
+      padding: 1px;
+      background: conic-gradient(
+        from var(--border-angle),
+        rgba(255,255,255,0.04) 0%,
+        rgba(255,255,255,0.04) 60%,
+        rgba(34,211,238,0.9) 75%,
+        rgba(0,188,212,1) 80%,
+        rgba(34,211,238,0.9) 85%,
+        rgba(255,255,255,0.04) 100%
+      );
+      -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      animation: border-spin 3s linear infinite;
+      z-index: -1;
+    }
+
+    .info-box p { margin-bottom: 6px; }
+    .info-box p:last-child { margin-bottom: 0; }
+    .warning-box p { color: var(--text); margin-bottom: 0; }
+
+    .update-date {
+      display: inline-block;
+      background: var(--cyan-dim);
+      color: var(--cyan);
+      font-size: 12px;
+      font-weight: 500;
+      padding: 4px 10px;
+      border-radius: 4px;
+      margin-bottom: 24px;
+    }
+
+    /* FOOTER */
+    .legal-footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 32px 24px;
+      text-align: center;
+    }
+
+    .legal-footer p {
+      font-size: 13px;
+      color: var(--text-dim);
+      margin-bottom: 8px;
+    }
+
+    .legal-footer a {
+      color: var(--cyan);
+      text-decoration: none;
+    }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--cyan-dim);
+      color: var(--cyan);
+      border: 1px solid rgba(0,188,212,0.3);
+      border-radius: 8px;
+      padding: 10px 20px;
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.2s;
+      margin-bottom: 24px;
+    }
+
+    .back-btn:hover {
+      background: rgba(0,188,212,0.25);
+    }
+
+    @media (max-width: 600px) {
+      .nav-tabs { gap: 2px; }
+      .nav-tab { padding: 5px 10px; font-size: 12px; }
+    }
+  /* CURSOR EFFECTS */
+.cursor-dot {
+  position: fixed;
+  width: 6px;
+  height: 6px;
+  background: #22D3EE;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+  will-change: left, top, filter;
+  box-shadow: 0 0 8px rgba(34,211,238,0.8);
+}
+.cursor-ring {
+  position: fixed;
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid rgba(34,211,238,0.3);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99998;
+  transform: translate(-50%, -50%);
+  will-change: left, top, width, height;
+}
+.cursor-glow {
+  position: fixed;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(34,211,238,0.06) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  will-change: left, top;
+}
+@media (hover: none), (pointer: coarse) {
+  .cursor-dot, .cursor-ring, .cursor-glow { display: none !important; }
+  * { cursor: auto !important; }
+}
+
+.lang-notice {
+  font-size: 13px;
+  color: var(--text-dim);
+}
+.lang-notice a { color: var(--cyan); text-decoration: none; }
+.lang-notice a:hover { text-decoration: underline; }
+
+</style>
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "wugidtdmbx");
+    </script>
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DZL9017H4F"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-DZL9017H4F');
+    </script>
+</head>
+<body>
+<div class="cursor-dot" id="cDot"></div>
+<div class="cursor-ring" id="cRing"></div>
+<div class="cursor-glow" id="cGlow"></div>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="top-bar-inner">
+      <a href="index.html" class="logo-link">Vitality<span>.</span></a>
+      <nav class="nav-tabs">
+        <a href="#legal-notice" class="nav-tab">Legal Notice</a>
+        <a href="#privacy" class="nav-tab">Privacy</a>
+        <a href="#cookies" class="nav-tab">Cookies</a>
+        <a href="#terms" class="nav-tab">Terms</a>
+        <a href="#medical-disclaimer" class="nav-tab">Medical Disclaimer</a>
+        <a href="../legal.html" class="nav-tab" aria-label="Switch language">ES</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <div class="page-hero">
+    <div class="section-label">Legal Information</div>
+    <h1>Transparency and regulatory compliance</h1>
+    <p>Last updated: <strong>May 2025</strong> &nbsp;·&nbsp; Applicable regulations: GDPR, Organic Law 3/2018 (LOPD-GDD), Spanish Act 34/2002 (LSSI-CE)</p>
+    <div class="info-box" style="margin-top:24px;">
+      <p class="lang-notice">This is an English translation provided for convenience. In case of any discrepancy, the Spanish version of this legal notice (available at <a href="../legal.html">../legal.html</a>) shall prevail.</p>
+    </div>
+  </div>
+
+  <!-- ===================== LEGAL NOTICE ===================== -->
+  <section id="legal-notice" class="legal-section">
+    <div class="section-label">01 — Legal Notice</div>
+    <h2 class="section-title">Legal Notice and Identification of the Data Controller</h2>
+
+    <span class="update-date">In compliance with the Spanish Act 34/2002 (LSSI-CE)</span>
+
+    <div class="info-box">
+      <p><strong>Legal name:</strong> Advanced Biohacking S.L.</p>
+      <p><strong>Trade name:</strong> Vitality Life Balance</p>
+      <p><strong>Tax ID (NIF/CIF):</strong> B26775494</p>
+      <p><strong>Registered address:</strong> Carretera de Rivas, 30, 28052 Madrid, Spain</p>
+      <p><strong>Email address:</strong> <a href="mailto:vitalitylifebalance@gmail.com"><span class="__cf_email__" data-cfemail="84f2edf0e5e8edf0fde8ede2e1e6e5e8e5eae7e1c4e3e9e5ede8aae7ebe9">[email&#160;protected]</span></a></p>
+      <p><strong>Website:</strong> vitalitylifebalance.com</p>
+      <p><strong>Registered with:</strong> Commercial Registry of Madrid (Registro Mercantil de Madrid)</p>
+    </div>
+
+    <h3>Purpose and scope</h3>
+    <p>This Legal Notice governs access to and use of the Vitality Life Balance website (hereinafter, "the Site"), owned by Advanced Biohacking S.L. (Tax ID B26775494), operating under the trade name Vitality Life Balance, with registered address at Carretera de Rivas, 30, 28052 Madrid, Spain. Access to the Site implies full and unreserved acceptance of these legal terms.</p>
+
+    <h3>Intellectual and industrial property</h3>
+    <p>All content on the Site — text, images, logos, graphics, designs, source code and other elements — is the property of Vitality Life Balance or of third parties that have authorized its use. Reproduction, distribution, public communication or transformation of such content without prior written authorization is expressly prohibited.</p>
+
+    <h3>Liability</h3>
+    <p>Vitality Life Balance is not liable for any damages that may arise from use of the Site, from inaccuracies in its content, or from any impossibility of access. The Site may contain links to third parties; Vitality Life Balance does not control and assumes no responsibility for the content of such external sites.</p>
+
+    <h3>Governing law and jurisdiction</h3>
+    <p>These terms are governed by Spanish law. For any dispute, the parties submit to the competent courts and tribunals in accordance with applicable regulations. In the case of consumer users, consumer protection regulations shall apply.</p>
+  </section>
+
+  <!-- ===================== PRIVACY ===================== -->
+  <section id="privacy" class="legal-section">
+    <div class="section-label">02 — Privacy</div>
+    <h2 class="section-title">Privacy Policy</h2>
+
+    <span class="update-date">GDPR (EU) 2016/679 · Organic Law 3/2018 (LOPD-GDD)</span>
+
+    <h3>Data controller</h3>
+    <div class="info-box">
+      <p><strong>Identity:</strong> Advanced Biohacking S.L. — trade name: Vitality Life Balance (Tax ID B26775494)</p>
+      <p><strong>Email:</strong> <a href="mailto:vitalitylifebalance@gmail.com"><span class="__cf_email__" data-cfemail="abddc2dfcac7c2dfd2c7c2cdcec9cac7cac5c8ceebccc6cac2c785c8c4c6">[email&#160;protected]</span></a></p>
+      <p><strong>Purpose of contact:</strong> Order management, customer service, commercial communications and service improvement</p>
+    </div>
+
+    <h3>Information we collect</h3>
+    <p>When you visit our website, we automatically collect certain information about your device, including information about your web browser, IP address, time zone, and some of the cookies installed on your device. As you browse the Site, we collect information about the individual pages or products you view, the websites or search terms that referred you to the Site, and information about how you interact with it. We refer to this automatically collected information as "Device Information".</p>
+
+    <p>We collect Device Information using the following technologies:</p>
+    <ul>
+      <li><strong>Cookies:</strong> data files placed on your device that often include an anonymous unique identifier.</li>
+      <li><strong>Log files:</strong> track actions occurring on the Site and collect data including your IP address, browser type, Internet service provider, referring/exit pages, and date/time stamps.</li>
+      <li><strong>Web beacons, tags and pixels:</strong> electronic files used to record information about how you browse the Site.</li>
+    </ul>
+
+    <p>When you make or attempt to make a purchase through the Site (managed via Shopify), we collect certain information from you, including your name, billing address, shipping address, payment information, email address, and phone number. We refer to this information as "Order Information".</p>
+
+    <h3>How we use your personal information</h3>
+    <p>We use the Order Information to fulfill any orders placed through the Site (including processing your payment information, arranging for shipping, and providing you with invoices and/or order confirmations). Additionally, we use this Information to:</p>
+    <ul>
+      <li>Communicate with you</li>
+      <li>Screen orders for potential risk or fraud</li>
+      <li>When in line with your preferences, provide you with information or advertising relating to our products or services</li>
+    </ul>
+
+    <p>We use the Device Information to help us screen for potential risk and fraud (in particular, your IP address), and more generally to improve and optimize our Site (for example, by generating analytics about how our customers browse and interact with the Site, and to assess the success of our marketing and advertising campaigns).</p>
+
+    <h3>Sharing your personal information</h3>
+    <p>We share your Personal Information with third parties to help us use it as described above. For example, we use Shopify to power our online store; you can read more about how Shopify uses your Personal Information here: <a href="https://www.shopify.com/legal/privacy" target="_blank" rel="noopener">shopify.com/legal/privacy</a>. We also use Google Analytics to understand how our customers use the Site; you can read more about how Google uses your information here: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>.</p>
+    <p>We may share your Personal Information to comply with applicable laws and regulations, or to respond to lawful requests.</p>
+
+    <h3>Behavioral advertising</h3>
+    <p>We use your Personal Information to provide you with targeted advertising or marketing communications we believe may be of interest to you. For more information about how targeted advertising works, you can visit the educational page provided by the Network Advertising Initiative (NAI).</p>
+    <p>You can opt out of targeted advertising using the links below:</p>
+    <ul>
+      <li><a href="https://www.facebook.com/settings/?tab=ads" target="_blank" rel="noopener">Facebook Ads</a></li>
+      <li><a href="https://myaccount.google.com/data-and-privacy" target="_blank" rel="noopener">Google Ads</a></li>
+    </ul>
+
+    <h3>Your rights</h3>
+    <p>If you are a European resident, you have the right to access the personal information we hold about you and to request that your personal information be corrected, updated, or deleted. You also have the right to data portability and to lodge a complaint with the Spanish Data Protection Agency (Agencia Española de Protección de Datos, AEPD). To exercise any of these rights, contact us at <a href="mailto:vitalitylifebalance@gmail.com"><span class="__cf_email__" data-cfemail="4c3a25382d2025383520252a292e2d202d222f290c2b212d2520622f2321">[email&#160;protected]</span></a>.</p>
+
+    <h3>Data retention</h3>
+    <p>When you place an order through the Site, we will retain your Order Information in our records unless and until you ask us to delete this information. Browsing data is retained for the minimum period necessary for the stated purposes.</p>
+
+    <h3>Minors</h3>
+    <p>The Site is not intended for individuals under 16 years of age. We do not knowingly collect personal information from minors. If you believe a minor has provided us with personal data, please contact us so we can proceed to delete it.</p>
+
+    <h3>Changes to this policy</h3>
+    <p>We may update this privacy policy periodically to reflect, for example, changes in our practices or for other operational, legal, or regulatory reasons. The current version will always be available on this page.</p>
+
+    <h3>Contact</h3>
+    <p>For more information about our privacy practices, questions, or complaints: <a href="mailto:vitalitylifebalance@gmail.com"><span class="__cf_email__" data-cfemail="97e1fee3f6fbfee3eefbfef1f2f5f6fbf6f9f4f2d7f0faf6fefbb9f4f8fa">[email&#160;protected]</span></a></p>
+  </section>
+
+  <!-- ===================== COOKIES ===================== -->
+  <section id="cookies" class="legal-section">
+    <div class="section-label">03 — Cookies</div>
+    <h2 class="section-title">Cookie Policy</h2>
+
+    <span class="update-date">ePrivacy Directive · GDPR</span>
+
+    <h3>What are cookies?</h3>
+    <p>Cookies are small text files stored in your browser or on your device when you visit a website. They are used to make the website work properly, to improve your browsing experience, to analyze traffic, and to show you relevant advertising.</p>
+
+    <h3>Types of cookies we use</h3>
+
+    <h3>Strictly necessary cookies</h3>
+    <p>These are essential for the website to function. Without them, the site cannot provide essential services such as the shopping cart, the checkout process, or access to secure areas. They do not require your consent.</p>
+    <ul>
+      <li><strong>_session_id:</strong> manages the user's session</li>
+      <li><strong>cart:</strong> stores the shopping cart contents (Shopify)</li>
+      <li><strong>secure_customer_sig:</strong> customer authentication (Shopify)</li>
+    </ul>
+
+    <h3>Analytics cookies</h3>
+    <p>These allow us to count visits and traffic sources so we can measure and improve the performance of our site. All information these cookies collect is aggregated and therefore anonymous.</p>
+    <ul>
+      <li><strong>_ga, _gid, _gat:</strong> Google Analytics — analysis of user behavior</li>
+    </ul>
+
+    <h3>Marketing cookies</h3>
+    <p>These are used to track visitors across websites. The intention is to display ads that are relevant and engaging for the individual user.</p>
+    <ul>
+      <li><strong>_fbp:</strong> Meta (Facebook/Instagram) — advertising conversion tracking</li>
+      <li><strong>ttclid:</strong> TikTok — campaign tracking</li>
+    </ul>
+
+    <h3>Managing cookies</h3>
+    <p>You can control and/or delete cookies as you wish. You can delete all cookies already on your device, and you can set most browsers to prevent them from being placed. However, if you do this, you may have to manually adjust some preferences every time you visit a site, and some services and functionalities may not work.</p>
+
+    <p>To manage cookies in your browser:</p>
+    <ul>
+      <li><strong>Chrome:</strong> Settings → Privacy and security → Cookies</li>
+      <li><strong>Firefox:</strong> Options → Privacy and security → Cookies</li>
+      <li><strong>Safari:</strong> Preferences → Privacy → Cookies</li>
+      <li><strong>Edge:</strong> Settings → Cookies and site permissions</li>
+    </ul>
+
+    <h3>Third-party cookies</h3>
+    <p>Some of our partners may set cookies on your device. These third parties have their own independent privacy policies, over which we have no control. For more information, please review the privacy policies of Google, Meta, and Shopify.</p>
+
+    <h3>Updates to this policy</h3>
+    <p>We may update this Cookie Policy to reflect changes in the cookies we use or for other operational, legal, or regulatory reasons. Please check this page periodically to stay informed about our use of cookies.</p>
+
+    <h3>Contact</h3>
+    <p>If you have questions about our use of cookies: <a href="mailto:vitalitylifebalance@gmail.com"><span class="__cf_email__" data-cfemail="3f49564b5e53564b465356595a5d5e535e515c5a7f58525e5653115c5052">[email&#160;protected]</span></a></p>
+  </section>
+
+  <!-- ===================== TERMS ===================== -->
+  <section id="terms" class="legal-section">
+    <div class="section-label">04 — Terms</div>
+    <h2 class="section-title">Terms and Conditions</h2>
+
+    <span class="update-date">Spanish Consumer Protection Act · Royal Legislative Decree 1/2007 (RDL 1/2007)</span>
+
+    <h3>Section 1 — Terms of use</h3>
+    <p>By accessing our website and making purchases, you agree to be bound by these Terms and Conditions and all applicable policies and legal notices. These terms apply to all users of the site, including visitors, customers, and anyone who accesses the content. If you do not agree with any of these terms, you may not access the site or use any of its services. Any new feature or tool added to the store will also be subject to these Terms and Conditions.</p>
+
+    <h3>Section 2 — General conditions</h3>
+    <p>We reserve the right to refuse service to anyone for any reason at any time. Your content (excluding credit card information) may be transferred unencrypted and may involve: (a) transmissions over various networks; and (b) changes to conform and adapt to technical requirements of connecting networks or devices. Credit card information is always encrypted during transfer over networks. You agree not to reproduce, duplicate, copy, sell, resell, or exploit any portion of the Service without our express written permission.</p>
+
+    <h3>Section 3 — Accuracy, completeness, and timeliness of information</h3>
+    <p>We are not responsible if information made available on this site is not accurate, complete, or current. The material on this site is provided for general informational purposes only and should not be relied upon or used as the sole basis for making decisions. Any reliance on the material on this site is at your own risk. This site may contain certain historical information, which is not necessarily current and is provided for reference purposes only.</p>
+
+    <h3>Section 4 — Modifications to the service and prices</h3>
+    <p>Prices for our products are subject to change without notice. We reserve the right at any time to modify or discontinue the Service (or any part or content thereof) without notice. We shall not be liable to you or to any third party for any modification, price change, suspension, or discontinuance of the Service.</p>
+
+    <h3>Section 5 — Products or services</h3>
+    <p>Certain products or services may be available exclusively online through the website. These products or services may have limited quantities and are subject to return or exchange only according to our Return Policy. We have made every effort to display as accurately as possible the colors and images of our products that appear at the store. We cannot guarantee that your monitor's display of any color will be accurate. We reserve the right, but are not obligated, to limit the sales of our products or Services to any person, geographic region, or jurisdiction.</p>
+
+    <h3>Section 6 — Billing and account information accuracy</h3>
+    <p>We reserve the right to refuse any order you place with us. We may, at our sole discretion, limit or cancel quantities purchased per person, per household, or per order. These restrictions may include orders placed by or under the same customer account, the same credit card, and/or orders that use the same billing and/or shipping address. We will notify you by email and/or billing address/phone number provided at the time the order was made. We reserve the right to limit or prohibit orders that, in our sole judgment, appear to be placed by dealers, resellers, or distributors.</p>
+    <p>You agree to provide current, complete, and accurate purchase and account information for all purchases made at our store. You agree to promptly update your account and other information so we can complete your transactions and contact you as needed.</p>
+
+    <h3>Section 7 — Optional third-party tools</h3>
+    <p>We may provide you with access to third-party tools over which we neither monitor nor have any control nor input. You acknowledge and agree that we provide access to such tools "as is" and "as available" without any warranties, representations, or conditions of any kind and without any endorsement. We shall have no liability whatsoever arising from or relating to your use of optional third-party tools.</p>
+
+    <h3>Section 8 — Third-party links</h3>
+    <p>Certain content, products, and services available through our Service may include materials from third parties. Third-party links on this site may direct you to third-party websites that are not affiliated with us. We are not responsible for examining or evaluating the content or accuracy, and we do not warrant and will not have any liability for any third-party materials or websites, or for any other materials, products, or services of third parties.</p>
+
+    <h3>Section 9 — Comments, feedback, and other submissions</h3>
+    <p>If, at our request, you send certain specific submissions (for example, contest entries) or without a request from us you send creative ideas, suggestions, proposals, plans, or other materials, whether online, by email, by postal mail, or otherwise (collectively, "comments"), you agree that we may, at any time, without restriction, edit, copy, publish, distribute, translate, and otherwise use in any medium any comments that you forward to us. We are not and shall not be obligated to maintain any comments in confidence.</p>
+
+    <h3>Section 10 — Personal information</h3>
+    <p>Your submission of personal information through the store is governed by our Privacy Policy, available on this same page.</p>
+
+    <h3>Section 11 — Errors, inaccuracies, and omissions</h3>
+    <p>Occasionally there may be information on our site or in the Service that contains typographical errors, inaccuracies, or omissions that may relate to product descriptions, pricing, promotions, offers, product shipping charges, transit times, and availability. We reserve the right to correct any errors, inaccuracies, or omissions, and to change or update information or cancel orders if any information in the Service or on any related website is inaccurate at any time without prior notice.</p>
+
+    <h3>Section 12 — Prohibited uses</h3>
+    <p>In addition to other prohibitions set forth in the Terms of Service, you are prohibited from using the site or its content: (a) for any unlawful purpose; (b) to solicit others to perform or participate in any unlawful acts; (c) to violate any international, federal, provincial, or state regulations, rules, laws, or local ordinances; (d) to infringe upon or violate our intellectual property rights or the intellectual property rights of others; (e) to harass, abuse, insult, harm, defame, slander, disparage, intimidate, or discriminate based on gender, sexual orientation, religion, ethnicity, race, age, national origin, or disability; (f) to submit false or misleading information.</p>
+
+    <h3>Section 13 — Limitation of liability</h3>
+    <p>To the extent permitted by applicable law, the Service and all products and services delivered to you through the Service are provided "as is" and "as available" for your use, without any representation, warranty, or condition of any kind, either express or implied. In no case shall Vitality Life Balance, its directors, officers, employees, affiliates, agents, contractors, or licensors be liable for any incidental, indirect, punitive, special, or consequential damages of any kind.</p>
+
+    <h3>Section 14 — Indemnification</h3>
+    <p>You agree to indemnify, defend, and hold harmless Vitality Life Balance and our parent, subsidiaries, affiliates, partners, officers, directors, agents, contractors, licensors, service providers, and employees from any claim or demand, including reasonable attorneys' fees, made by any third party due to or arising out of your breach of these Terms of Service or the documents they incorporate by reference.</p>
+
+    <h3>Section 15 — Severability</h3>
+    <p>In the event that any provision of these Terms of Service is determined to be unlawful, void, or unenforceable, such provision shall nonetheless be enforceable to the fullest extent permitted by applicable law, and the unenforceable portion shall be deemed severed from these Terms of Service; such determination shall not affect the validity and enforceability of any other remaining provisions.</p>
+
+    <h3>Section 16 — Termination</h3>
+    <p>The obligations and liabilities of the parties incurred prior to the termination date shall survive the termination of this agreement for all purposes. These Terms of Service are effective unless and until terminated by either you or us. You may terminate these Terms of Service at any time by notifying us that you no longer wish to use our Services. If in our sole judgment you fail, or we suspect that you have failed, to comply with any term or provision of these Terms of Service, we may also terminate this agreement at any time without notice.</p>
+
+    <h3>Section 17 — Entire agreement</h3>
+    <p>Our failure to exercise or enforce any right or provision of these Terms of Service shall not constitute a waiver of such right or provision. These Terms of Service and any policies or operating rules posted by us on this site or in respect of the Service constitute the entire agreement and understanding between you and us and govern your use of the Service, superseding any prior or contemporaneous agreements, communications, and proposals, whether oral or written, between you and us.</p>
+
+    <h3>Section 18 — Governing law and jurisdiction</h3>
+    <p>These Terms of Service and any separate agreement whereby we provide you with Services shall be governed by and construed in accordance with Spanish law. For any dispute arising from use of the Site or the Services, the parties submit to the jurisdiction of the competent courts and tribunals under Spanish law. In the case of consumer users, the consumer protection provisions established in Royal Legislative Decree 1/2007 shall apply.</p>
+
+    <h3>Section 19 — Changes to the terms</h3>
+    <p>You can review the most current version of the Terms of Service at any time on this page. We reserve the right, at our sole discretion, to update, change, or replace any part of these Terms of Service by posting updates and changes to our website. It is your responsibility to check our website periodically for changes. Your continued use of or access to our website or the Service following the posting of any changes to these Terms of Service constitutes acceptance of those changes.</p>
+
+    <h3>Section 20 — Contact</h3>
+    <p>Questions about the Terms of Service should be sent to: <a href="mailto:vitalitylifebalance@gmail.com"><span class="__cf_email__" data-cfemail="87f1eef3e6ebeef3feebeee1e2e5e6ebe6e9e4e2c7e0eae6eeeba9e4e8ea">[email&#160;protected]</span></a></p>
+  </section>
+
+  <!-- ===================== MEDICAL DISCLAIMER ===================== -->
+  <section id="medical-disclaimer" class="legal-section">
+    <div class="section-label">05 — Medical Disclaimer</div>
+    <h2 class="section-title">Medical Disclaimer and Health Liability Waiver</h2>
+
+    <span class="update-date">Mandatory for wellness products</span>
+
+    <div class="warning-box">
+      <p><strong>Important:</strong> Vitality Life Balance products and information are not a substitute for professional medical advice. Always consult your physician with any questions about your health.</p>
+    </div>
+
+    <h3>Informational nature of the content</h3>
+    <p>The information provided on this website has been created and published online for informational and educational purposes only. It is not intended to be medical advice, is not a substitute for professional medical advice, and should not be used as a basis for making personal health-related decisions.</p>
+
+    <h3>Not a substitute for medical judgment</h3>
+    <p>The information contained on this website should not be considered complete, should not be considered medical advice, and should not be used in place of a visit, call, consultation, or advice from your physician or other healthcare provider. The information obtained through this website is not exhaustive and does not cover every aspect of illnesses, ailments, or physical treatments.</p>
+
+    <h3>Always consult a professional</h3>
+    <p>If you have any healthcare-related questions, call or consult your physician or other healthcare provider immediately. You should never disregard medical advice or delay seeking it because of something you have read on this website. Our grounding and bioelectric reconnection products are wellness aids and are not intended to diagnose, treat, cure, or prevent any disease or medical condition.</p>
+
+    <h3>About the studies and research cited</h3>
+    <p>References to published scientific studies on earthing/grounding (such as the work of Chevalier et al., published in journals such as Frontiers in Physiology or the Journal of Environmental and Public Health) are provided for informational and educational purposes only. Vitality Life Balance does not claim that its products exactly replicate the conditions of such studies, nor that results are guaranteed for all users.</p>
+
+    <h3>Individual results</h3>
+    <p>Testimonials and experiences shared on this site reflect individual experiences and may not be representative of the results other users may obtain. Results may vary significantly from person to person depending on individual health factors, lifestyle, and product use.</p>
+
+    <h3>Pre-existing health conditions</h3>
+    <p>If you have any pre-existing medical condition, are taking medication, are pregnant or breastfeeding, or have any other health concerns, consult your physician before using our products. Individuals with pacemakers, metal implants, or other electronic medical devices should consult their specialist before use.</p>
+
+    <h3>Contact</h3>
+    <p>For any questions about our products and their proper use: <a href="mailto:vitalitylifebalance@gmail.com"><span class="__cf_email__" data-cfemail="16607f62777a7f626f7a7f707374777a7778757356717b777f7a3875797b">[email&#160;protected]</span></a></p>
+  </section>
+
+  <!-- FOOTER -->
+  <div class="legal-footer">
+    <a href="index.html" class="back-btn">← Back to home</a>
+    <p>© 2025 Advanced Biohacking S.L. · Trade name: Vitality Life Balance · Tax ID (NIF) B26775494 · Madrid, Spain</p>
+    <p>To exercise your GDPR rights: <a href="mailto:vitalitylifebalance@gmail.com"><span class="__cf_email__" data-cfemail="27514e53464b4e535e4b4e414245464b4649444267404a464e4b0944484a">[email&#160;protected]</span></a></p>
+    <p class="lang-notice">English translation for convenience only — the Spanish version at <a href="../legal.html">../legal.html</a> shall prevail in case of discrepancy.</p>
+  </div>
+
+  <script>
+    // Highlight active tab on scroll
+    const sections = document.querySelectorAll('.legal-section');
+    const tabs = document.querySelectorAll('.nav-tab');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.id;
+          tabs.forEach(t => t.classList.remove('active'));
+          const active = document.querySelector(`.nav-tab[href="#${id}"]`);
+          if (active) active.classList.add('active');
+        }
+      });
+    }, { threshold: 0.3, rootMargin: '-60px 0px -60% 0px' });
+
+    sections.forEach(s => observer.observe(s));
+  </script>
+<script>
+// CUSTOM CURSOR — glitch + particle trail + magnetic ring
+(function() {
+  const dot  = document.getElementById('cDot');
+  const ring = document.getElementById('cRing');
+  const glow = document.getElementById('cGlow');
+  if (!dot || !ring || !glow) return;
+
+  const cvs = document.createElement('canvas');
+  cvs.style.cssText = 'position:fixed;inset:0;width:100vw;height:100vh;pointer-events:none;z-index:99996;';
+  cvs.width = window.innerWidth;
+  cvs.height = window.innerHeight;
+  document.body.appendChild(cvs);
+  const ctx = cvs.getContext('2d');
+  window.addEventListener('resize', () => { cvs.width = window.innerWidth; cvs.height = window.innerHeight; });
+
+  let mx = 0, my = 0, pmx = 0, pmy = 0;
+  let dvx = 0, dvy = 0;
+  let rx = 0, ry = 0, rSize = 36;
+  let hovering = false;
+  const particles = [];
+
+  document.addEventListener('mousemove', e => {
+    pmx = mx; pmy = my;
+    mx = e.clientX; my = e.clientY;
+    dvx = mx - pmx; dvy = my - pmy;
+    hovering = !!e.target.closest('a,button,.product-card,[role="button"]');
+    const speed = Math.sqrt(dvx*dvx + dvy*dvy);
+    if (speed > 3) {
+      for (let i = 0; i < Math.min(Math.floor(speed * 0.4), 4); i++) {
+        particles.push({
+          x: mx + (Math.random() - 0.5) * 4,
+          y: my + (Math.random() - 0.5) * 4,
+          vx: (Math.random() - 0.5) * 1.5 - dvx * 0.08,
+          vy: (Math.random() - 0.5) * 1.5 - dvy * 0.08,
+          r: Math.random() * 2.5 + 0.5,
+          life: 1,
+          decay: 0.045 + Math.random() * 0.03,
+          hue: 175 + Math.random() * 25
+        });
+      }
+    }
+    glow.style.left = mx + 'px';
+    glow.style.top  = my + 'px';
+  });
+
+  document.addEventListener('mouseleave', () => { dot.style.opacity='0'; ring.style.opacity='0'; });
+  document.addEventListener('mouseenter', () => { dot.style.opacity='1'; ring.style.opacity='1'; });
+
+  function lerp(a, b, t) { return a + (b - a) * t; }
+
+  function render() {
+    ctx.clearRect(0, 0, cvs.width, cvs.height);
+    for (let i = particles.length - 1; i >= 0; i--) {
+      const p = particles[i];
+      p.x += p.vx; p.y += p.vy;
+      p.vy += 0.04;
+      p.life -= p.decay;
+      if (p.life <= 0) { particles.splice(i, 1); continue; }
+      ctx.globalAlpha = p.life * 0.75;
+      ctx.fillStyle = `hsl(${p.hue},100%,65%)`;
+      ctx.shadowColor = `hsl(${p.hue},100%,65%)`;
+      ctx.shadowBlur = 8;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r * p.life, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    ctx.globalAlpha = 1;
+    ctx.shadowBlur = 0;
+
+    dot.style.left = mx + 'px';
+    dot.style.top  = my + 'px';
+
+    const speed = Math.sqrt(dvx*dvx + dvy*dvy);
+    const g = Math.min(speed * 0.5, 10);
+    dot.style.filter = g > 1
+      ? `drop-shadow(${(-dvx*0.5).toFixed(1)}px ${(-dvy*0.5).toFixed(1)}px 0 rgba(255,0,180,${Math.min(g/10,0.85).toFixed(2)})) drop-shadow(${(dvx*0.5).toFixed(1)}px ${(dvy*0.5).toFixed(1)}px 0 rgba(0,255,210,${Math.min(g/10,0.85).toFixed(2)}))`
+      : 'none';
+
+    dvx *= 0.82; dvy *= 0.82;
+
+    rx = lerp(rx, mx, 0.1);
+    ry = lerp(ry, my, 0.1);
+    const targetSize = hovering ? 58 : 36;
+    rSize = lerp(rSize, targetSize, 0.12);
+    ring.style.left   = rx + 'px';
+    ring.style.top    = ry + 'px';
+    ring.style.width  = rSize + 'px';
+    ring.style.height = rSize + 'px';
+    ring.style.borderColor = hovering ? 'rgba(34,211,238,0.7)' : 'rgba(34,211,238,0.28)';
+    ring.style.boxShadow   = hovering ? '0 0 18px rgba(34,211,238,0.25)' : 'none';
+
+    requestAnimationFrame(render);
+  }
+  render();
+})();
+</script>
+</body>
+</html>
