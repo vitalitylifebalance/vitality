@@ -1075,7 +1075,7 @@
     for(var t=1;t<=gTotalFrames;t++){
       (function(idx){
         var img=new Image();
-        img.src='scroll_web/frames/frame_'+String(idx).padStart(4,'0')+'.webp';
+        img.src='../scroll_web/frames/frame_'+String(idx).padStart(4,'0')+'.webp';
         img.onload=img.onerror=function(){
           gLoadedCount++;
           var pct=Math.round(gLoadedCount/gTotalFrames*100);
