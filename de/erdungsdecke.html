@@ -288,6 +288,35 @@
  ]
 }
 </script>
+<style>/* lang-selector-dropdown-fix */
+.lang-selector{position:relative;z-index:1001;display:inline-flex;align-items:center}
+.lang-toggle{display:flex;align-items:center;gap:0.4rem;background:rgba(255,255,255,0.04);border:1px solid rgba(34,211,238,0.15);border-radius:100px;padding:0.4rem 0.8rem 0.4rem 0.6rem;cursor:pointer;transition:all 0.3s cubic-bezier(0.4,0,0.2,1);color:#8A9BAA;font-family:inherit;font-size:0.72rem;font-weight:500;letter-spacing:0.06em}
+.lang-toggle:hover{background:rgba(34,211,238,0.08);border-color:rgba(34,211,238,0.35);color:#E0EAF0}
+.lang-toggle .globe-icon{width:16px;height:16px;display:flex;flex-shrink:0}
+.lang-toggle .globe-icon svg{width:100%;height:100%;stroke:#29B6F6;stroke-width:1.5;fill:none;transition:stroke 0.3s,transform 0.5s}
+.lang-toggle:hover .globe-icon svg{transform:rotate(20deg)}
+.lang-toggle .lang-code{text-transform:uppercase}
+.lang-toggle .chevron{width:9px;height:9px;transition:transform 0.3s;flex-shrink:0}
+.lang-selector.open .lang-toggle .chevron{transform:rotate(180deg)}
+.lang-dropdown{display:block;position:absolute;top:calc(100% + 0.6rem);right:0;min-width:190px;background:rgba(6,15,35,0.97);backdrop-filter:blur(24px) saturate(1.6);border:1px solid rgba(34,211,238,0.14);border-radius:0.9rem;padding:0.4rem;opacity:0;visibility:hidden;pointer-events:none;transform:translateY(-8px) scale(0.97);transition:all 0.25s cubic-bezier(0.4,0,0.2,1);box-shadow:0 16px 48px rgba(0,0,0,0.5),0 0 0 1px rgba(34,211,238,0.05);max-height:320px;overflow-y:auto;z-index:1001}
+.lang-selector.open .lang-dropdown,.lang-selector:hover .lang-dropdown,.lang-selector:focus-within .lang-dropdown{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0) scale(1)}
+.lang-dropdown::-webkit-scrollbar{width:4px}
+.lang-dropdown::-webkit-scrollbar-track{background:transparent}
+.lang-dropdown::-webkit-scrollbar-thumb{background:rgba(34,211,238,0.2);border-radius:4px}
+.lang-option{display:flex;align-items:center;gap:0.6rem;padding:0.5rem 0.7rem;border-radius:0.55rem;cursor:pointer;transition:all 0.2s;color:#8A9BAA;font-size:0.8rem;font-weight:400;border:none;background:none;width:100%;font-family:inherit;text-align:left;text-decoration:none}
+.lang-option:hover{background:rgba(34,211,238,0.08);color:#E0EAF0}
+.lang-option.active{background:rgba(34,211,238,0.12);color:#29B6F6;font-weight:600}
+.lang-option .flag{font-size:1.05rem;width:20px;text-align:center;flex-shrink:0}
+.lang-option .lang-name{flex:1;white-space:nowrap}
+.lang-option .check-mark{opacity:0;color:#29B6F6;font-size:0.7rem;transition:opacity 0.2s}
+.lang-option.active .check-mark{opacity:1}
+@media (max-width:1024px){.lang-dropdown{right:auto;left:0}}
+@media (max-width:768px){.lang-toggle .lang-code{display:none}.lang-toggle{padding:0.4rem 0.5rem}}
+.lang-switch{display:flex!important;align-items:center;justify-content:center;flex-wrap:wrap;gap:0.35rem 0.5rem;font-size:0.85rem;color:#8A9BAA;width:auto!important}
+.lang-switch a,.lang-switch span{width:auto!important;border-bottom:none!important;padding:0!important;font-size:inherit!important}
+.lang-switch a{color:#8A9BAA;text-decoration:none;transition:color 0.2s}
+.lang-switch a:hover{color:#29B6F6}
+</style>
 </head>
 <body>
 <div class="cursor-dot" id="cDot"></div>
@@ -304,7 +333,7 @@
     <li><a href="index.html">Start</a></li>
     <li><a href="index.html#productos">Produkte</a></li>
     <li><a href="erdungslaken.html">Grounding</a></li>
-    <li><span class="lang-switch" aria-label="Language"><a href="../mantas-product.html">ES</a> · <a href="../en/grounding-blanket.html">EN</a> · <a href="../fr/couverture-mise-a-la-terre.html">FR</a> · <span style="opacity:.45;">DE</span> · <a href="../pt/manta-aterramento.html">PT</a></span></li>
+    <li class="lang-selector"><button type="button" class="lang-toggle" aria-haspopup="true" aria-expanded="false" aria-label="Sprache wählen"><span class="globe-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.7 2.6 4.3 6 4.3 9s-1.6 6.4-4.3 9c-2.7-2.6-4.3-6-4.3-9s1.6-6.4 4.3-9z"/></svg></span><span class="lang-code">DE</span><svg class="chevron" width="9" height="9" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 3.5L5 6.5L8 3.5"/></svg></button><div class="lang-dropdown" role="menu"><a class="lang-option" role="menuitem" href="../mantas-product.html"><span class="flag">🇪🇸</span><span class="lang-name">Español</span><span class="check-mark"></span></a><a class="lang-option" role="menuitem" href="../en/grounding-blanket.html"><span class="flag">🇬🇧</span><span class="lang-name">English</span><span class="check-mark"></span></a><a class="lang-option" role="menuitem" href="../fr/couverture-mise-a-la-terre.html"><span class="flag">🇫🇷</span><span class="lang-name">Français</span><span class="check-mark"></span></a><span class="lang-option active" role="menuitem" aria-current="true"><span class="flag">🇩🇪</span><span class="lang-name">Deutsch</span><span class="check-mark">&#10003;</span></span><a class="lang-option" role="menuitem" href="../pt/manta-aterramento.html"><span class="flag">🇵🇹</span><span class="lang-name">Português</span><span class="check-mark"></span></a></div></li>
   </ul>
   <a href="#" class="nav-cta" onclick="goCheckout(event)">Kaufen</a>
 </nav>
@@ -848,6 +877,37 @@ function setVideo(thumb){
 </script>
 <script>
 (function(){var el=document.getElementById('urgencyTimer');if(!el)return;function u(){var now=new Date(),m=new Date(now.toLocaleString('en-US',{timeZone:'Europe/Madrid'})),c=new Date(m);c.setHours(18,0,0,0);if(m>=c)c.setDate(c.getDate()+1);var d=c-m;if(d<=0){el.textContent='morgen';return;}var h=String(Math.floor(d/3600000)).padStart(2,'0'),mm=String(Math.floor((d%3600000)/60000)).padStart(2,'0'),s=String(Math.floor((d%60000)/1000)).padStart(2,'0');el.textContent=h+':'+mm+':'+s;}u();setInterval(u,1000);})();
+</script>
+<script>
+/* langSelectorDropdownFixV1 */
+(function(){
+  document.querySelectorAll('.lang-selector').forEach(function(sel){
+    var toggle = sel.querySelector('.lang-toggle');
+    if(!toggle) return;
+    toggle.addEventListener('click', function(e){
+      e.preventDefault();
+      var willOpen = !sel.classList.contains('open');
+      document.querySelectorAll('.lang-selector.open').forEach(function(o){
+        o.classList.remove('open');
+        var t = o.querySelector('.lang-toggle');
+        if(t) t.setAttribute('aria-expanded', 'false');
+      });
+      if(willOpen){
+        sel.classList.add('open');
+        toggle.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+  document.addEventListener('click', function(e){
+    if(!e.target.closest('.lang-selector')){
+      document.querySelectorAll('.lang-selector.open').forEach(function(o){
+        o.classList.remove('open');
+        var t = o.querySelector('.lang-toggle');
+        if(t) t.setAttribute('aria-expanded', 'false');
+      });
+    }
+  });
+})();
 </script>
 </body>
 </html>
