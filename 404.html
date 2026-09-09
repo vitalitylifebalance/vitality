@@ -84,10 +84,10 @@ main{flex:1;display:flex;align-items:center;justify-content:center;padding:160px
 footer{background:var(--bg2);padding:60px 5%;border-top:1px solid rgba(0,119,182,0.1)}
 .footer-inner{max-width:1200px;margin:0 auto}
 .footer-top{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-bottom:40px;padding-bottom:40px;border-bottom:1px solid rgba(0,119,182,0.08)}
-.footer-brand h3{font-size:1.2rem;margin-bottom:12px;background:linear-gradient(135deg,#48CAE4,#0077B6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.footer-brand h2{font-size:1.2rem;margin-bottom:12px;background:linear-gradient(135deg,#48CAE4,#0077B6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .footer-brand p{font-size:0.9rem;color:var(--text3);max-width:280px;line-height:1.6}
 .footer-links{display:flex;gap:40px}
-.footer-col h4{font-size:0.85rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;background:linear-gradient(135deg,#48CAE4,#0077B6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:16px}
+.footer-col h3{font-size:0.85rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;background:linear-gradient(135deg,#48CAE4,#0077B6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:16px}
 .footer-col a{display:block;font-size:0.9rem;color:var(--text3);margin-bottom:8px;transition:var(--t)}
 .footer-col a:hover{color:var(--accent3)}
 .footer-bottom{display:flex;justify-content:space-between;align-items:center;font-size:0.8rem;color:var(--text3)}
@@ -112,16 +112,16 @@ footer{background:var(--bg2);padding:60px 5%;border-top:1px solid rgba(0,119,182
 
 <!-- NAV -->
 <nav id="mainNav">
-  <a href="index.html" class="nav-logo">
+  <a href="/" class="nav-logo">
     <div class="nav-logo-wordmark">Vitality</div>
     <div class="nav-logo-tagline">Biohacking · Grounding · Bienestar</div>
   </a>
   <div class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="vitality-research.html">Research</a>
-    <a href="sabana-product.html">Sábana Grounding</a>
-    <a href="vipassanna-product.html">Vipassanna</a>
-    <a href="sabana-product.html" class="nav-cta">Ver Productos</a>
+    <a href="/">Home</a>
+    <a href="/vitality-research">Research</a>
+    <a href="/sabana-product">Sábana Grounding</a>
+    <a href="/vipassanna-product">Vipassanna</a>
+    <a href="/sabana-product" class="nav-cta">Ver Productos</a>
   </div>
   <button class="res-hamburger" id="resHamburger" aria-label="Menú" aria-expanded="false">
     <span></span><span></span><span></span>
@@ -131,10 +131,10 @@ footer{background:var(--bg2);padding:60px 5%;border-top:1px solid rgba(0,119,182
 <!-- Mobile menu -->
 <div class="res-mobile-menu" id="resMobileMenu">
   <button class="res-mobile-menu-close" id="resMenuClose">&#10005;</button>
-  <a href="index.html" onclick="closeResMenu()">Home</a>
-  <a href="vitality-research.html" onclick="closeResMenu()">Research</a>
-  <a href="sabana-product.html" onclick="closeResMenu()">Sábana Grounding</a>
-  <a href="vipassanna-product.html" onclick="closeResMenu()">Vipassanna</a>
+  <a href="/" onclick="closeResMenu()">Home</a>
+  <a href="/vitality-research" onclick="closeResMenu()">Research</a>
+  <a href="/sabana-product" onclick="closeResMenu()">Sábana Grounding</a>
+  <a href="/vipassanna-product" onclick="closeResMenu()">Vipassanna</a>
 </div>
 
 <!-- 404 CONTENT -->
@@ -146,33 +146,33 @@ footer{background:var(--bg2);padding:60px 5%;border-top:1px solid rgba(0,119,182
     <p class="error-desc">Parece que esta ruta perdió su conexión a tierra. El enlace que has seguido está roto o la página se ha movido, pero el resto de Vitality Life Balance sigue perfectamente conectado.</p>
 
     <div class="error-links">
-      <a href="index.html" class="error-link-card">
+      <a href="/" class="error-link-card">
         <div class="error-link-tag">Inicio</div>
         <div class="error-link-title">Volver a la home de Vitality</div>
       </a>
-      <a href="sabana-product.html" class="error-link-card">
+      <a href="/sabana-product" class="error-link-card">
         <div class="error-link-tag">Producto</div>
         <div class="error-link-title">Sábana Grounding 5% Plata</div>
       </a>
-      <a href="vipassanna-product.html" class="error-link-card">
+      <a href="/vipassanna-product" class="error-link-card">
         <div class="error-link-tag">Producto Estrella</div>
         <div class="error-link-title">Vipassanna</div>
       </a>
-      <a href="vitality-research.html" class="error-link-card">
+      <a href="/vitality-research" class="error-link-card">
         <div class="error-link-tag">Blog Científico</div>
         <div class="error-link-title">Vitality Research</div>
       </a>
-      <a href="como-saber-si-tu-sabana-grounding-funciona.html" class="error-link-card">
+      <a href="/como-saber-si-tu-sabana-grounding-funciona" class="error-link-card">
         <div class="error-link-tag">Guía Práctica</div>
         <div class="error-link-title">Cómo saber si tu sábana grounding funciona</div>
       </a>
-      <a href="mejores-sabanas-grounding-2026.html" class="error-link-card">
+      <a href="/mejores-sabanas-grounding-2026" class="error-link-card">
         <div class="error-link-tag">Comparativa</div>
         <div class="error-link-title">Mejores sábanas grounding 2026</div>
       </a>
     </div>
 
-    <a href="index.html" class="error-home-btn">Ir al inicio →</a>
+    <a href="/" class="error-home-btn">Ir al inicio →</a>
   </div>
 </main>
 
@@ -181,25 +181,25 @@ footer{background:var(--bg2);padding:60px 5%;border-top:1px solid rgba(0,119,182
   <div class="footer-inner">
     <div class="footer-top">
       <div class="footer-brand">
-        <h3>Vitality Life Balance</h3>
+        <h2>Vitality Life Balance</h2>
         <p>Tecnología de reconexión bioeléctrica y grounding. Ciencia basada en evidencia para tu bienestar óptimo.</p>
       </div>
       <div class="footer-links">
         <div class="footer-col">
-          <h4>Navegación</h4>
-          <a href="index.html">Inicio</a>
-          <a href="vitality-research.html">Vitality Research</a>
-          <a href="sabana-product.html">Sábana Grounding</a>
-          <a href="vipassanna-product.html">Vipassanna</a>
-          <a href="quienes-somos.html">Quiénes Somos</a>
+          <h3>Navegación</h3>
+          <a href="/">Inicio</a>
+          <a href="/vitality-research">Vitality Research</a>
+          <a href="/sabana-product">Sábana Grounding</a>
+          <a href="/vipassanna-product">Vipassanna</a>
+          <a href="/quienes-somos">Quiénes Somos</a>
         </div>
         <div class="footer-col">
-          <h4>Artículos</h4>
-          <a href="como-saber-si-tu-sabana-grounding-funciona.html">Test de tu Sábana Grounding</a>
-          <a href="mejores-sabanas-grounding-2026.html">Mejores Sábanas Grounding 2026</a>
-          <a href="plata-vs-acero-grounding.html">Plata vs Acero</a>
-          <a href="envios-devoluciones.html">Envíos y Devoluciones</a>
-    <a href="legal.html">Aviso Legal</a>
+          <h3>Artículos</h3>
+          <a href="/como-saber-si-tu-sabana-grounding-funciona">Test de tu Sábana Grounding</a>
+          <a href="/mejores-sabanas-grounding-2026">Mejores Sábanas Grounding 2026</a>
+          <a href="/plata-vs-acero-grounding">Plata vs Acero</a>
+          <a href="/envios-devoluciones">Envíos y Devoluciones</a>
+    <a href="/legal">Aviso Legal</a>
         </div>
       </div>
     </div>

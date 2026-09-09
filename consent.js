@@ -7,11 +7,11 @@
   var lang = (document.documentElement.lang || 'es').slice(0, 2).toLowerCase();
 
   var T = {
-    es: { msg: 'Usamos cookies analíticas (Google Analytics y Clarity) para entender cómo se usa la web y mejorarla. Sin aceptar, no se instala ninguna.', ok: 'Aceptar', no: 'Rechazar', more: 'Más información', legal: '/legal.html#cookies' },
-    en: { msg: 'We use analytics cookies (Google Analytics and Clarity) to understand how the site is used and improve it. Nothing is installed unless you accept.', ok: 'Accept', no: 'Decline', more: 'More info', legal: '/en/legal.html#cookies' },
-    fr: { msg: 'Nous utilisons des cookies analytiques (Google Analytics et Clarity) pour comprendre l’usage du site et l’améliorer. Rien n’est installé sans votre accord.', ok: 'Accepter', no: 'Refuser', more: 'Plus d’infos', legal: '/fr/legal.html#cookies' },
-    de: { msg: 'Wir verwenden Analyse-Cookies (Google Analytics und Clarity), um die Nutzung der Website zu verstehen und sie zu verbessern. Ohne Zustimmung wird nichts installiert.', ok: 'Akzeptieren', no: 'Ablehnen', more: 'Mehr Infos', legal: '/de/legal.html#cookies' },
-    pt: { msg: 'Usamos cookies analíticos (Google Analytics e Clarity) para perceber como o site é usado e melhorá-lo. Nada é instalado sem aceitares.', ok: 'Aceitar', no: 'Recusar', more: 'Mais info', legal: '/pt/legal.html#cookies' }
+    es: { msg: 'Usamos cookies analíticas (Google Analytics y Clarity) para entender cómo se usa la web y mejorarla. Sin aceptar, no se instala ninguna.', ok: 'Aceptar', no: 'Rechazar', more: 'Más información', legal: '/legal#cookies' },
+    en: { msg: 'We use analytics cookies (Google Analytics and Clarity) to understand how the site is used and improve it. Nothing is installed unless you accept.', ok: 'Accept', no: 'Decline', more: 'More info', legal: '/en/legal#cookies' },
+    fr: { msg: 'Nous utilisons des cookies analytiques (Google Analytics et Clarity) pour comprendre l’usage du site et l’améliorer. Rien n’est installé sans votre accord.', ok: 'Accepter', no: 'Refuser', more: 'Plus d’infos', legal: '/fr/legal#cookies' },
+    de: { msg: 'Wir verwenden Analyse-Cookies (Google Analytics und Clarity), um die Nutzung der Website zu verstehen und sie zu verbessern. Ohne Zustimmung wird nichts installiert.', ok: 'Akzeptieren', no: 'Ablehnen', more: 'Mehr Infos', legal: '/de/legal#cookies' },
+    pt: { msg: 'Usamos cookies analíticos (Google Analytics e Clarity) para perceber como o site é usado e melhorá-lo. Nada é instalado sem aceitares.', ok: 'Aceitar', no: 'Recusar', more: 'Mais info', legal: '/pt/legal#cookies' }
   };
   var t = T[lang] || T.es;
 
