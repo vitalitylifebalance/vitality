@@ -2020,6 +2020,31 @@
 
 <!-- FOOTER -->
 
+<!-- VT-SHARE-WA:start -->
+<style>
+#vtShareWa{position:fixed;bottom:6.5rem;right:calc(2rem + 4px);z-index:9985;display:flex;flex-direction:column;gap:0.6rem}
+#vtShareWa a,#vtShareWa button{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:none;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,0.35)}
+#vtShareWa .vtwa-btn{background:#25D366;color:#fff}
+#vtShareWa .vtshare-btn{background:rgba(255,255,255,0.08);color:var(--text,var(--text-light,#E0EAF0));border:1px solid var(--border,rgba(255,255,255,0.07));backdrop-filter:blur(8px)}
+#vtShareWa svg{width:22px;height:22px}
+</style>
+<div id="vtShareWa">
+  <button class="vtshare-btn" onclick="vtSharePage()" aria-label="Diese Seite teilen">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.6" y1="13.5" x2="15.4" y2="17.5"/><line x1="15.4" y1="6.5" x2="8.6" y2="10.5"/></svg>
+  </button>
+</div>
+<script>
+function vtSharePage(){
+  if(navigator.share){
+    navigator.share({title:document.title,url:location.href}).catch(function(){});
+  }else{
+    navigator.clipboard.writeText(location.href);
+    alert('Link kopiert');
+  }
+}
+</script>
+<!-- VT-SHARE-WA:end -->
+
 <footer class="footer">
   <div class="footer-inner">
     <div class="footer-brand">
