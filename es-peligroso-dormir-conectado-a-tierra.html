@@ -30,7 +30,7 @@
 <meta name="twitter:image" content="https://vitalitylifebalance.com/img/tienda/VITALITY-72.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'"><noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
 
 <!-- Schema: Article -->
 <script type="application/ld+json">
@@ -442,7 +442,17 @@ footer{background:var(--bg2);padding:60px 5%;border-top:1px solid rgba(0,119,182
 .lang-switch a{color:#8A9BAA;text-decoration:none;transition:color 0.2s}
 .lang-switch a:hover{color:#29B6F6}
 </style>
-    <script defer src="/consent.js?v=1"></script>
+    <script defer src="/consent.js?v=2"></script>
+<style id="VT-TEXTADJUST">html{-webkit-text-size-adjust:100%;text-size-adjust:100%}</style>
+<style id="VT-TLDR-CTA">
+.tldr-box{margin:24px 0 32px;padding:20px 24px;border:1px solid rgba(0,119,182,0.18);border-left:3px solid var(--accent3);border-radius:8px;background:rgba(255,255,255,0.02)}
+.tldr-label{font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent3);font-weight:700;margin-bottom:10px}
+.tldr-box .tldr-list,.article-body .article-wrapper .tldr-box .tldr-list{margin:0;padding-left:1.2em}
+.tldr-box .tldr-list li,.article-body .article-wrapper .tldr-box .tldr-list li{margin-bottom:4px;color:var(--text2);font-size:0.93rem;line-height:1.8}
+.inline-cta{margin:28px 0;padding:20px 24px;border-radius:8px;background:linear-gradient(135deg,rgba(0,119,182,0.08),rgba(0,180,216,0.05));border:1px solid rgba(0,180,216,0.2);text-align:center}
+.inline-cta p,.article-body .article-wrapper .inline-cta p{margin:0 0 12px;color:var(--text);font-size:0.95rem}
+.inline-cta .inline-cta-btn,.article-body .article-wrapper .inline-cta a.inline-cta-btn{display:inline-block;padding:10px 24px;border-radius:100px;background:linear-gradient(135deg,#0077B6,#00B4D8);color:#fff;text-decoration:none;font-weight:700;font-size:0.85rem}
+</style>
 </head>
 <body>
 
@@ -523,9 +533,25 @@ footer{background:var(--bg2);padding:60px 5%;border-top:1px solid rgba(0,119,182
       height="420"
     >
 
+    <div class="tldr-box">
+      <div class="tldr-label">En resumen</div>
+      <ul class="tldr-list">
+        <li>En uso normal, con un cable con resistencia de seguridad integrada y un enchufe con tierra real, el riesgo de descarga es prácticamente nulo.</li>
+        <li>El riesgo de verdad no está en la sábana sino en la instalación: un enchufe sin toma de tierra real es la causa raíz de casi todo.</li>
+        <li>Durante una tormenta eléctrica, desconecta el cable del enchufe. Sin excepciones: la resistencia del cable no está pensada para un pico de tensión atmosférico.</li>
+        <li>Marcapasos, anticoagulantes y embarazo: no hay estudios publicados. Lo honesto es decir &ldquo;no se sabe&rdquo; y consultarlo antes con tu médico.</li>
+        <li>Con bebés y niños el riesgo documentado no es eléctrico, es de estrangulamiento con el cable: fíjalo bajo el colchón y fuera de su alcance.</li>
+      </ul>
+    </div>
+
     <p>¿Es peligroso dormir conectado a tierra? Es la pregunta que casi nadie responde con honestidad antes de comprar una sábana grounding, y la respuesta corta es: en uso normal, con un cable que incorpora resistencia de seguridad y un enchufe con tierra real, el riesgo de descarga es prácticamente nulo. Pero hay cinco situaciones concretas en las que la respuesta cambia, y dos en las que, sencillamente, no hay estudios que la respalden — y ahí lo correcto es preguntar al médico, no tranquilizarte a ti mismo.</p>
 
     <p>Este artículo no trata de si el grounding funciona: para eso tienes <a href="grounding-verdad-o-placebo.html">si el grounding funciona de verdad o es placebo</a>. Aquí hablamos solo de si puede hacerte daño, escenario por escenario, sin adornos y sin vender una tranquilidad que no podemos demostrar.</p>
+
+    <div class="inline-cta">
+      <p>La seguridad empieza por poder comprobarla, no por dar nada por hecho. La sábana de Vitality incluye cable con resistencia de seguridad y comprobador, para verificar tu enchufe antes de dormir sobre ella.</p>
+      <a href="sabana-product.html" class="inline-cta-btn">Ver la Sábana Grounding</a>
+    </div>
 
     <h2>¿Qué riesgos de dormir conectado a tierra están resueltos y cuáles no?</h2>
 
@@ -595,6 +621,8 @@ footer{background:var(--bg2);padding:60px 5%;border-top:1px solid rgba(0,119,182
     <h3>Cómo se ve la tierra en un enchufe schuko español</h3>
 
     <p>En un enchufe schuko, el estándar en España, la tierra no son los dos orificios centrales (fase y neutro), sino los dos contactos metálicos laterales que sobresalen ligeramente a los lados de la carcasa (<a href="https://www.leroymerlin.es/ideas-y-consejos/consejos/enchufes-con-toma-de-tierra-que-son-y-para-que-sirven.html" target="_blank" rel="noopener">Leroy Merlin — Enchufes con toma de tierra</a>). Si esos contactos no están activos y conectados a una toma de tierra real del edificio, cualquier producto de grounding que enchufes ahí no cumple su función.</p>
+
+    <p>Si estás en ese punto —con la sábana en la mano y sin saber si tu enchufe sirve—, el paso a paso completo está en <a href="como-conectar-sabana-grounding-enchufe-schuko.html">cómo conectar una sábana grounding al enchufe schuko en España</a>: qué hace exactamente el adaptador de solo tierra, por qué no debes enchufarlo a una regleta y qué salidas honestas tienes si tu vivienda no tiene tierra real.</p>
 
     <h3>Por qué esto es más frecuente en España</h3>
 

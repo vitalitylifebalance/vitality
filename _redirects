@@ -1,0 +1,30 @@
+# Redirecciones 301 — URLs del WordPress/WooCommerce antiguo → páginas actuales
+# Motivo GEO: los asistentes IA (ChatGPT/Perplexity) tienen indexada la web vieja
+# y se estrellan contra 404 al intentar citarnos (18 demand signals fallidos en
+# Cloudflare AI Crawl Control, 2026-07-09). Cada ruta vieja aterriza en contenido vivo.
+
+# Productos WooCommerce → fichas actuales
+/producto/vispassana* /vipassanna-product 301
+/producto/vipassanna* /vipassanna-product 301
+/producto/sabana* /sabana-product 301
+/producto/almohada* /almohadas-product 301
+/producto/funda* /almohadas-product 301
+/producto/esterilla* /esterilla-product 301
+/producto/manta* /mantas-product 301
+/producto/* / 301
+
+# Categorías WooCommerce → fichas o home
+/categoria-producto/manta* /mantas-product 301
+/categoria-producto/sabana* /sabana-product 301
+/categoria-producto/almohada* /almohadas-product 301
+/categoria-producto/esterilla* /esterilla-product 301
+/categoria-producto/* / 301
+
+# Restos de WordPress/Elementor
+/elementor-14/* / 301
+/wp-content/* / 301
+/wp-admin/* / 301
+/wp-json/* / 301
+/tienda/* / 301
+/carrito/* / 301
+/blog/* /vitality-research 301

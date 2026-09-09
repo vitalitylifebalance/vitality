@@ -467,22 +467,6 @@ body {
 }
 
 </style>
-    <!-- Microsoft Clarity -->
-    <script type="text/javascript">
-        (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "wugidtdmbx");
-    </script>
-    <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DZL9017H4F"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-DZL9017H4F');
-    </script>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -575,6 +559,21 @@ body {
 .lang-switch a{color:#8A9BAA;text-decoration:none;transition:color 0.2s}
 .lang-switch a:hover{color:#29B6F6}
 </style>
+    <script defer src="/consent.js?v=2"></script>
+<style id="VT-TEXTADJUST">html{-webkit-text-size-adjust:100%;text-size-adjust:100%}</style>
+
+<!-- VT-REVEAL-SIL:start -->
+<style>
+.reveal-base { background: #04070c !important; overflow: hidden; }
+.sil-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+.sil-glow { position: absolute; width: 150%; height: 65%; left: -25%; top: -6%; background: radial-gradient(ellipse at 66% 22%, rgba(140,200,255,0.28) 0%, rgba(79,195,247,0.12) 30%, rgba(0,188,212,0.05) 52%, transparent 72%); mix-blend-mode: screen; filter: blur(6px); animation: sil-glow-breath 6s ease-in-out infinite; }
+.sil-fog { position: absolute; inset: -20%; background: radial-gradient(ellipse 45% 26% at 22% 58%, rgba(80,140,190,0.13), transparent 70%), radial-gradient(ellipse 50% 30% at 78% 40%, rgba(60,120,180,0.11), transparent 70%); mix-blend-mode: screen; filter: blur(14px); animation: sil-fog-drift 14s ease-in-out infinite alternate; }
+.sil-vignette { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 42%, transparent 40%, rgba(2,5,9,0.75) 100%); }
+@keyframes sil-glow-breath { 0%,100%{opacity:0.75;transform:scale(1)} 50%{opacity:1;transform:scale(1.06)} }
+@keyframes sil-fog-drift { 0%{transform:translate(0,0)} 100%{transform:translate(4%,-3%)} }
+</style>
+<!-- VT-REVEAL-SIL:end -->
+
 </head>
 <body>
 <div class="cursor-dot" id="cDot"></div>
@@ -641,21 +640,19 @@ body {
     <!-- Origin story -->
     <div class="about-origin">
       <div class="reveal-container" id="revealContainer">
-        <div class="reveal-base">
-          <canvas id="nervousSystemCanvas"></canvas>
-        </div>
+        <div class="reveal-base"> <img class="sil-img" src="../lucas-silueta.jpg" alt="" aria-hidden="true"> <div class="sil-glow"></div> <div class="sil-fog"></div> <div class="sil-vignette"></div> </div>
         <div class="reveal-photo" id="revealPhoto">
           <img src="../lucas.jpg" alt="Lucas Calderón — Founder of Vitality">
         </div>
         <div class="reveal-cursor" id="revealCursor"></div>
         <div class="reveal-frame"></div>
-        <div class="reveal-hint">Hover to reveal</div>
+        <div class="reveal-hint" id="revealHint">Hover to reveal</div>
       </div>
 
       <div class="about-story rv rv-d1">
         <h3>Where <span>Vitality</span> was born</h3>
         <p>There was a before and an after. One day I could do anything — train hard, eat whatever I wanted, live without limits. The next, my body simply shut down. For <strong>three years</strong> I was trapped in an illness no one could explain: a chronic lung condition that stole my breath, my energy, and my freedom to live a normal life.</p>
-        <p>I went from eating anything to barely tolerating food at all. From feeling invincible to depending on treatments that targeted the symptoms, never the root cause. Doctor after doctor, test after test — and always the same answer: <em>"It's chronic. Learn to live with it."</em></p>
+        <p>I went from eating anything to barely tolerating food at all. From feeling invincible to depending on drugs that only masked the symptoms without curing the root. Doctor after doctor, test after test — and always the same answer: <em>"It's chronic. Learn to live with it."</em></p>
         <div class="story-highlight">
           But I refused to accept that sentence.
         </div>
@@ -710,11 +707,14 @@ body {
 
     <!-- Stats bar -->
     <div class="about-stats-bar rv">
-      <div class="about-stat"><div class="as-num">100%</div><div class="as-label">Satisfaction based on reviews to date</div></div>
-      <div class="about-stat"><div class="as-num">4.9/5</div><div class="as-label">Satisfaction</div></div>
+      <div class="about-stat"><div class="as-num">5.0</div>
+        <div class="as-label">On Google reviews</div></div>
+      <div class="about-stat"><div class="as-num">11</div>
+        <div class="as-label">Verified reviews</div></div>
       <div class="about-stat"><div class="as-num">+20</div><div class="as-label">Scientific studies</div></div>
       <div class="about-stat"><div class="as-num">4</div><div class="as-label">Countries</div></div>
-      <div class="about-stat"><div class="as-num">0</div><div class="as-label">Adverse effects reported</div></div>
+      <div class="about-stat"><div class="as-num">14 days</div>
+        <div class="as-label">Return policy</div></div>
     </div>
 
   </div>
@@ -850,79 +850,12 @@ revealEls.forEach(el => revealObs.observe(el));
   drawBg();
 })();
 
-// NERVOUS SYSTEM + HOVER REVEAL
+// HOVER REVEAL — silueta mística → foto real
 (function() {
   const container = document.getElementById('revealContainer');
   const photo = document.getElementById('revealPhoto');
   const cursor = document.getElementById('revealCursor');
-  const canvas = document.getElementById('nervousSystemCanvas');
-  if (!container || !canvas) return;
-  const ctx = canvas.getContext('2d');
-  let nerveSegments = [], nodePositions = [], cachedW = 0, cachedH = 0;
-
-  function seededRandom(seed) {
-    let s = seed;
-    return function() { s = (s * 16807 + 0) % 2147483647; return (s - 1) / 2147483646; };
-  }
-
-  function generateNerveData(w, h) {
-    nerveSegments = []; nodePositions = [];
-    const cx = w / 2;
-    const rng = seededRandom(42);
-    nerveSegments.push({ type: 'line', x1: cx, y1: h*0.07, x2: cx, y2: h*0.56, color: 'rgba(34,211,238,0.8)', width: 4 });
-    for (let i = 0; i < 12; i++) {
-      const angle = (i / 12) * Math.PI * 2; const r = w * 0.08;
-      nerveSegments.push({ type: 'quad', x1: cx, y1: h*0.07, cpx: cx + Math.cos(angle)*r*1.4, cpy: h*0.07 + Math.sin(angle)*r*0.9, x2: cx + Math.cos(angle)*r*0.6, y2: h*0.07 + Math.sin(angle)*r*1.1, color: 'rgba(34,211,238,0.45)', width: 1.5 });
-    }
-    function addNerve(sx, sy, ex, ey, depth, opacity, branches) {
-      if (depth <= 0) return;
-      const midX = (sx + ex)/2 + (rng() - 0.5)*15; const midY = (sy + ey)/2 + (rng() - 0.5)*10;
-      nerveSegments.push({ type: 'quad', x1: sx, y1: sy, cpx: midX, cpy: midY, x2: ex, y2: ey, color: `rgba(34,211,238,${opacity})`, width: depth * 0.5 });
-      for (let i = 0; i < branches; i++) {
-        const t = 0.3 + rng()*0.5; const bx = sx + (ex - sx)*t + (rng()-0.5)*20; const by = sy + (ey - sy)*t;
-        const bex = bx + (ex - sx)*0.4*(rng()+0.5); const bey = by + (ey - sy)*0.3*(rng()+0.3);
-        addNerve(bx, by, bex, bey, depth-1, opacity*0.6, Math.max(0, branches-1));
-      }
-    }
-    addNerve(cx, h*0.14, cx - w*0.16, h*0.18, 3, 0.3, 2); addNerve(cx, h*0.14, cx + w*0.16, h*0.18, 3, 0.3, 2);
-    addNerve(cx, h*0.18, cx - w*0.22, h*0.25, 4, 0.4, 2); addNerve(cx - w*0.22, h*0.25, cx - w*0.32, h*0.38, 3, 0.32, 2);
-    addNerve(cx - w*0.32, h*0.38, cx - w*0.38, h*0.48, 3, 0.25, 2); addNerve(cx, h*0.18, cx + w*0.22, h*0.25, 4, 0.4, 2);
-    addNerve(cx + w*0.22, h*0.25, cx + w*0.32, h*0.38, 3, 0.32, 2); addNerve(cx + w*0.32, h*0.38, cx + w*0.38, h*0.48, 3, 0.25, 2);
-    for (let i = 0; i < 10; i++) {
-      const y = h*(0.19 + i*0.035);
-      addNerve(cx, y, cx - w*0.16, y+5+(rng()-0.5)*8, 2, 0.2, 1); addNerve(cx, y, cx + w*0.16, y+5+(rng()-0.5)*8, 2, 0.2, 1);
-    }
-    addNerve(cx, h*0.48, cx - w*0.1, h*0.54, 3, 0.3, 2); addNerve(cx, h*0.48, cx + w*0.1, h*0.54, 3, 0.3, 2);
-    addNerve(cx, h*0.56, cx - w*0.08, h*0.62, 4, 0.4, 2); addNerve(cx - w*0.08, h*0.62, cx - w*0.1, h*0.75, 4, 0.35, 2);
-    addNerve(cx - w*0.1, h*0.75, cx - w*0.09, h*0.88, 3, 0.25, 1); addNerve(cx - w*0.09, h*0.88, cx - w*0.1, h*0.97, 2, 0.2, 1);
-    addNerve(cx, h*0.56, cx + w*0.08, h*0.62, 4, 0.4, 2); addNerve(cx + w*0.08, h*0.62, cx + w*0.1, h*0.75, 4, 0.35, 2);
-    addNerve(cx + w*0.1, h*0.75, cx + w*0.09, h*0.88, 3, 0.25, 1); addNerve(cx + w*0.09, h*0.88, cx + w*0.1, h*0.97, 2, 0.2, 1);
-    for (let i = 0; i < 8; i++) {
-      nodePositions.push({ x: w * (0.3 + rng() * 0.4), y: h * (0.1 + rng() * 0.8), r: 1.5 + rng() * 2 });
-    }
-  }
-
-  function drawNerves(w, h) {
-    if (w !== cachedW || h !== cachedH) { canvas.width = w; canvas.height = h; generateNerveData(w, h); cachedW = w; cachedH = h; }
-    ctx.clearRect(0, 0, w, h);
-    const t = Date.now() * 0.001;
-    nerveSegments.forEach(seg => {
-      ctx.beginPath(); ctx.strokeStyle = seg.color; ctx.lineWidth = seg.width;
-      if (seg.type === 'line') { ctx.moveTo(seg.x1, seg.y1); ctx.lineTo(seg.x2, seg.y2); }
-      else { ctx.moveTo(seg.x1, seg.y1); ctx.quadraticCurveTo(seg.cpx, seg.cpy, seg.x2, seg.y2); }
-      ctx.stroke();
-    });
-    nodePositions.forEach(n => {
-      const pulse = 0.6 + 0.4 * Math.sin(t * 2 + n.x);
-      ctx.beginPath(); ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(34,211,238,${pulse * 0.8})`; ctx.fill();
-      ctx.beginPath(); ctx.arc(n.x, n.y, n.r * 2.5, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(34,211,238,${pulse * 0.1})`; ctx.fill();
-    });
-  }
-
-  function animateNerves() { drawNerves(container.offsetWidth, container.offsetHeight); requestAnimationFrame(animateNerves); }
-  animateNerves();
+  if (!container || !photo) return;
 
   const RADIUS_IN = 120, RADIUS_OUT = 0;
   let mouseX = container.offsetWidth / 2, mouseY = container.offsetHeight / 2;
@@ -930,7 +863,9 @@ revealEls.forEach(el => revealObs.observe(el));
   let animId;
 
   function animateReveal() {
-    currentRadius += (targetRadius - currentRadius) * 0.12;
+    // abrir rápido, desvanecer despacio (petición de Lucas: que el haz dure más al salir)
+    const ease = targetRadius >= currentRadius ? 0.12 : 0.03;
+    currentRadius += (targetRadius - currentRadius) * ease;
     photo.style.clipPath = `circle(${currentRadius}px at ${mouseX}px ${mouseY}px)`;
     cursor.style.left = mouseX + 'px'; cursor.style.top = mouseY + 'px';
     animId = requestAnimationFrame(animateReveal);
@@ -950,6 +885,14 @@ revealEls.forEach(el => revealObs.observe(el));
     mouseX = touch.clientX - rect.left; mouseY = touch.clientY - rect.top; targetRadius = RADIUS_IN;
   }, { passive: false });
   container.addEventListener('touchend', () => { targetRadius = RADIUS_OUT; cursor.style.opacity = '0'; });
+  const hint = document.getElementById('revealHint');
+  if (hint && window.matchMedia('(hover: none)').matches) hint.textContent = 'Press and hold to reveal';
+  container.addEventListener('touchstart', e => {
+    const touch = e.touches[0]; const rect = container.getBoundingClientRect();
+    mouseX = touch.clientX - rect.left; mouseY = touch.clientY - rect.top; targetRadius = RADIUS_IN;
+    if (hint) hint.style.opacity = '0';
+  }, { passive: true });
+  container.addEventListener('touchend', () => { if (hint) hint.style.opacity = ''; });
 })();
 
 // ANIMATED COUNTERS
