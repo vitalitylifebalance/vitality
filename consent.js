@@ -1,5 +1,5 @@
 /* Vitality Life Balance — gestor de consentimiento de cookies (RGPD / ePrivacy).
-   GA4 y Microsoft Clarity SOLO se cargan tras consentimiento explícito. */
+   GA4 en Consent Mode v2 avanzado (sin cookies hasta aceptar); Clarity SOLO tras consentimiento. */
 (function () {
   var KEY = 'vlb_consent';
   var GA_ID = 'G-DZL9017H4F';
@@ -15,19 +15,31 @@
   };
   var t = T[lang] || T.es;
 
-  function loadAnalytics() {
-    // Google Analytics 4
+  /* Consent Mode v2 avanzado: gtag se carga SIEMPRE con todo denegado (sin
+     cookies, solo pings anónimos), así GA4 ve todas las páginas etiquetadas.
+     Al aceptar se actualiza a granted y se carga Clarity (que sí usa cookies). */
+  function loadGtag(isGranted) {
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+    gtag('consent', 'default', {
+      analytics_storage: isGranted ? 'granted' : 'denied',
+      ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied'
+    });
+    gtag('js', new Date());
+    gtag('config', GA_ID, { linker: { domains: ['vitalitylifebalance.com', 'tienda.vitalitylifebalance.com', 'account.vitalitylifebalance.com'] } });
     var s = document.createElement('script');
     s.async = true;
     s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
     document.head.appendChild(s);
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
-    gtag('js', new Date());
-    gtag('consent', 'default', { analytics_storage: 'granted', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
-    gtag('config', GA_ID, { linker: { domains: ['vitalitylifebalance.com', 'tienda.vitalitylifebalance.com', 'account.vitalitylifebalance.com'] } });
     wireEcommerceEvents();
-    // Microsoft Clarity
+  }
+
+  function grantAnalytics() {
+    gtag('consent', 'update', { analytics_storage: 'granted' });
+    loadClarity();
+  }
+
+  function loadClarity() {
     (function (c, l, a, r, i, tt, y) {
       c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };
       tt = l.createElement(r); tt.async = 1; tt.src = 'https://www.clarity.ms/tag/' + i;
@@ -58,6 +70,10 @@
       var el = ev.target && ev.target.closest && ev.target.closest('a,button');
       if (!el) return;
       var target = el.getAttribute('href') || el.getAttribute('onclick') || '';
+      if (target.indexOf('google.com/preferences/source') !== -1) {
+        gtag('event', 'preferred_source_click', { page_path: location.pathname });
+        return;
+      }
       var m = target.match(/tienda\.vitalitylifebalance\.com\/cart\/([0-9:,]+)/);
       if (!m) return;
       var items = m[1].split(',').map(function (pair) {
@@ -70,7 +86,9 @@
 
   var stored = null;
   try { stored = localStorage.getItem(KEY); } catch (e) {}
-  if (stored === 'granted') { loadAnalytics(); return; }
+  // El default ya sale granted si aceptó antes: un 'update' posterior llegaría tarde al page_view.
+  loadGtag(stored === 'granted');
+  if (stored === 'granted') { loadClarity(); return; }
   if (stored === 'denied') { return; }
 
   function showBanner() {
@@ -91,7 +109,7 @@
     document.getElementById('vlbCOk').addEventListener('click', function () {
       try { localStorage.setItem(KEY, 'granted'); } catch (e) {}
       b.remove();
-      loadAnalytics();
+      grantAnalytics();
     });
     document.getElementById('vlbCNo').addEventListener('click', function () {
       try { localStorage.setItem(KEY, 'denied'); } catch (e) {}
