@@ -580,7 +580,8 @@ body {
 .lang-switch a{color:#8A9BAA;text-decoration:none;transition:color 0.2s}
 .lang-switch a:hover{color:#29B6F6}
 </style>
-    <script defer src="/consent.js?v=2"></script>
+    <script defer src="/attribution.js?v=1"></script>
+<script defer src="/consent.js?v=2"></script>
 <style id="VT-TEXTADJUST">html{-webkit-text-size-adjust:100%;text-size-adjust:100%}</style>
 </head>
 <body>
@@ -803,6 +804,10 @@ function vtSharePage(){
     <span>Hecho con ⚡ para tu bienestar</span>
   </div>
 </footer>
+<!-- VT-PREFSRC:start -->
+<style>.vt-prefsrc-band{display:flex;justify-content:center;padding:0.4rem 1rem 1.6rem}.vt-prefsrc{display:inline-flex;align-items:center;gap:0.55rem;min-height:44px;padding:0.55rem 1.1rem;border-radius:999px;border:1px solid rgba(255,255,255,0.16);background:rgba(255,255,255,0.04);color:inherit;font-size:0.82rem;line-height:1.3;text-decoration:none;text-align:left;transition:border-color .2s,background .2s}.vt-prefsrc svg{flex-shrink:0;color:#4FC3F7}.vt-prefsrc:hover{border-color:#4FC3F7;background:rgba(255,255,255,0.07)}.vt-prefsrc:focus-visible{outline:2px solid #4FC3F7;outline-offset:3px}@media(max-width:768px){.vt-prefsrc-band{padding-bottom:6.5rem}body:has(#vtShareWa) .vt-prefsrc-band{padding-bottom:14rem}}</style>
+<div class="vt-prefsrc-band"><a class="vt-prefsrc" href="https://www.google.com/preferences/source?q=vitalitylifebalance.com" target="_blank" rel="noopener" data-prefsrc="vitalitylifebalance.com"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.7 6.3.9-4.55 4.43 1.07 6.27L12 17.13l-5.62 2.97 1.07-6.27L2.9 9.4l6.3-.9z"/></svg><span>Añade Vitality a tus fuentes preferidas en Google</span></a></div>
+<!-- VT-PREFSRC:end -->
 
 <script>
 // HERO CANVAS — floating particles
@@ -1146,5 +1151,77 @@ function closeQsMenu() {
   });
 })();
 </script>
+<!-- VT-POPUP-PRECOMPRA:start -->
+<style>
+#vlbPop{position:fixed;inset:0;z-index:99990;display:none;align-items:center;justify-content:center;padding:20px}
+#vlbPop.on{display:flex}
+#vlbPop .vlb-bg{position:absolute;inset:0;background:rgba(4,8,14,0.72);backdrop-filter:blur(6px)}
+#vlbPop .vlb-card{position:relative;max-width:420px;width:100%;background:linear-gradient(165deg,#0B1626,#0A1322);border:1px solid rgba(79,195,247,0.28);border-radius:20px;padding:34px 30px 26px;box-shadow:0 24px 80px rgba(0,0,0,0.6);text-align:center;animation:vlbPopIn .45s cubic-bezier(.2,.9,.3,1.2)}
+@keyframes vlbPopIn{from{opacity:0;transform:translateY(26px) scale(.96)}to{opacity:1;transform:none}}
+#vlbPop .vlb-x{position:absolute;top:12px;right:16px;background:none;border:none;color:#8A9BAA;font-size:22px;cursor:pointer;line-height:1}
+#vlbPop .vlb-eyebrow{font-size:.62rem;letter-spacing:.3em;color:#4FC3F7;font-weight:700;margin-bottom:.7rem}
+#vlbPop h3{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:500;color:#E8F4F8;line-height:1.25;margin:0 0 .6rem}
+#vlbPop .vlb-sub{font-size:.85rem;color:rgba(200,216,228,.85);line-height:1.6;margin-bottom:1.2rem}
+#vlbPop input[type=email]{width:100%;padding:13px 16px;border-radius:100px;border:1px solid rgba(79,195,247,.35);background:rgba(255,255,255,.05);color:#E8F4F8;font-size:.9rem;outline:none;text-align:center}
+#vlbPop input[type=email]:focus{border-color:#4FC3F7}
+#vlbPop .vlb-cta{width:100%;margin-top:.7rem;padding:14px;border:none;border-radius:100px;background:linear-gradient(135deg,#0077B6,#00B4D8);color:#fff;font-weight:700;font-size:.95rem;cursor:pointer}
+#vlbPop .vlb-no{margin-top:.65rem;background:none;border:none;color:#5c6d7d;font-size:.75rem;cursor:pointer;text-decoration:underline}
+#vlbPop .vlb-legal{margin-top:.9rem;font-size:.62rem;color:#5c6d7d;line-height:1.5}
+#vlbPop .vlb-msg{margin-top:.7rem;font-size:.82rem;min-height:1.2em}
+.vlb-foot-nl{max-width:560px;margin:2.2rem auto 0;padding:1.4rem 1.5rem;border:1px solid rgba(79,195,247,.2);border-radius:16px;background:rgba(255,255,255,.02);text-align:center}
+.vlb-foot-nl b{color:#E8F4F8;font-size:.95rem}
+.vlb-foot-nl p{font-size:.78rem;color:#8A9BAA;margin:.3rem 0 .8rem}
+.vlb-foot-nl form{display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center}
+.vlb-foot-nl input[type=email]{flex:1;min-width:200px;padding:11px 16px;border-radius:100px;border:1px solid rgba(79,195,247,.3);background:rgba(255,255,255,.05);color:#E8F4F8;font-size:.85rem;outline:none}
+.vlb-foot-nl button{padding:11px 22px;border:none;border-radius:100px;background:linear-gradient(135deg,#0077B6,#00B4D8);color:#fff;font-weight:700;font-size:.85rem;cursor:pointer}
+</style>
+<div id="vlbPop" role="dialog" aria-modal="true" aria-label="Un 5% para tu primera reconexión">
+  <div class="vlb-bg" onclick="vlbPopClose()"></div>
+  <div class="vlb-card">
+    <button class="vlb-x" onclick="vlbPopClose()" aria-label="Cerrar">×</button>
+    <div class="vlb-eyebrow">REGALO DE BIENVENIDA</div>
+    <h3>Un 5% para tu primera reconexión</h3>
+    <p class="vlb-sub">Déjanos tu email y te enviamos un código exclusivo del 5%. Válido 72 horas, un solo uso.</p>
+    <form onsubmit="return vlbPopSend(event,'popup')">
+      <input type="email" required placeholder="tu@email.com" autocomplete="email">
+      <button type="submit" class="vlb-cta">Quiero mi 5%</button>
+    </form>
+    <button class="vlb-no" onclick="vlbPopClose()">No, gracias</button>
+    <div class="vlb-msg" aria-live="polite"></div>
+    <p class="vlb-legal">Al suscribirte aceptas recibir emails de Vitality. Baja cuando quieras.</p>
+  </div>
+</div>
+<script>
+(function(){
+  var K_SEEN='vlb_pop_seen', K_DONE='vlb_pop_done', LANG='es';
+  function ls(k){try{return localStorage.getItem(k)}catch(e){return null}}
+  function lset(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+  var seen=ls(K_SEEN);
+  if(ls(K_DONE))return;
+  if(seen&&Date.now()-parseInt(seen,10)<30*24*3600*1000)return;
+  var shown=false;
+  function show(){if(shown||ls(K_DONE))return;shown=true;lset(K_SEEN,String(Date.now()));document.getElementById('vlbPop').classList.add('on');}
+  setTimeout(show,20000);
+  document.addEventListener('mouseout',function(e){if(!e.relatedTarget&&e.clientY<=8)show();});
+  window.vlbPopClose=function(){document.getElementById('vlbPop').classList.remove('on');};
+  window.vlbPopSend=function(ev,src){
+    ev.preventDefault();
+    var form=ev.target, email=form.querySelector('input[type=email]').value.trim();
+    var card=form.closest('.vlb-card')||form.parentElement;
+    var msg=card?card.querySelector('.vlb-msg'):null;
+    fetch('https://n8n.vitalitylifebalance.com/webhook/vitality-popup',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:'email='+encodeURIComponent(email)+'&lang='+LANG+'&source='+src})
+      .then(function(r){return r.json()})
+      .then(function(){
+        lset(K_DONE,'1');
+        if(msg){msg.textContent="¡Hecho! Revisa tu correo — tu código va de camino.";msg.style.color='#4FC3F7';}
+        form.querySelector('button[type=submit]').disabled=true;
+        setTimeout(window.vlbPopClose,3200);
+      })
+      .catch(function(){if(msg){msg.textContent="No hemos podido registrarte. Inténtalo de nuevo.";msg.style.color='#ff8a80';}});
+    return false;
+  };
+})();
+</script>
+<!-- VT-POPUP-PRECOMPRA:end -->
 </body>
 </html>

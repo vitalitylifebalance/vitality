@@ -3,6 +3,21 @@
 # y se estrellan contra 404 al intentar citarnos (18 demand signals fallidos en
 # Cloudflare AI Crawl Control, 2026-07-09). Cada ruta vieja aterriza en contenido vivo.
 
+# Rutas /productos/ (plural) de la tienda anterior → fichas actuales.
+# MEDIDO 2026-09-10: la UNICA URL de vitalitylifebalance.com que Google tiene
+# indexada es /productos/mantas-grounding, y devolvia 404 — el bloque de abajo
+# solo cubria /producto/ en singular (WooCommerce). Es decir: el unico enlace
+# que el buscador conocia de la web moria en un error.
+/productos/manta* /mantas-product 301
+/productos/sabana* /sabana-product 301
+/productos/sábana* /sabana-product 301
+/productos/almohada* /almohadas-product 301
+/productos/funda* /almohadas-product 301
+/productos/esterilla* /esterilla-product 301
+/productos/vipassanna* /vipassanna-product 301
+/productos/vispassana* /vipassanna-product 301
+/productos/* / 301
+
 # Productos WooCommerce → fichas actuales
 /producto/vispassana* /vipassanna-product 301
 /producto/vipassanna* /vipassanna-product 301
