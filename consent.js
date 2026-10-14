@@ -84,6 +84,13 @@
     }, true);
   }
 
+  /* Tráfico propio fuera de GA4: previsualizaciones locales y navegadores
+     automatizados (Playwright del deploy-publisher / vitality-qa) contaban
+     como sesiones reales. MEDIDO 14-oct: 127.0.0.1:9200 aparecía como fuente. */
+  var isInternal = /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname) ||
+    navigator.webdriver === true;
+  if (isInternal) { return; }
+
   var stored = null;
   try { stored = localStorage.getItem(KEY); } catch (e) {}
   // El default ya sale granted si aceptó antes: un 'update' posterior llegaría tarde al page_view.
