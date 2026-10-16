@@ -64,7 +64,7 @@
 - [Accueil (FR)](https://vitalitylifebalance.com/fr/): présentation de Vitality, des produits et de la philosophie bioélectrique.
 - [Drap de mise à la terre (FR)](https://vitalitylifebalance.com/fr/drap-mise-a-la-terre): fiche du drap individuel avec 5 % de fil d'argent.
 - [Draps de mise à la terre (FR)](https://vitalitylifebalance.com/fr/draps-de-mise-a-la-terre): présentation du grounding et de la gamme earthing.
-- [Vipassanna (FR)](https://vitalitylifebalance.com/fr/vipassanna): présentation du dispositif phare de reconnexion bioélectrique.
+- [Vipassanna (FR)](https://vitalitylifebalance.com/fr/dispositif-vipassanna): présentation du dispositif phare de reconnexion bioélectrique.
 
 ## Deutsche Version
 
@@ -73,7 +73,7 @@ Europäisches Ökosystem für bioelektrisches Wohlbefinden. Erdungslaken aus lei
 - [Startseite (DE)](https://vitalitylifebalance.com/de/): Überblick über Vitality, Produkte und bioelektrische Philosophie.
 - [Erdungs-Bettlaken (DE)](https://vitalitylifebalance.com/de/erdungs-bettlaken): Produktseite des Einzellakens mit 5 % Silberfaden.
 - [Erdungslaken (DE)](https://vitalitylifebalance.com/de/erdungslaken): Erklärung des Groundings und der Earthing-Produktreihe.
-- [Vipassanna (DE)](https://vitalitylifebalance.com/de/vipassanna): Produktseite des Vorzeigegeräts zur bioelektrischen Wiederverbindung.
+- [Vipassanna (DE)](https://vitalitylifebalance.com/de/vipassanna-geraet): Produktseite des Vorzeigegeräts zur bioelektrischen Wiederverbindung.
 
 ## Versão portuguesa
 
@@ -82,7 +82,7 @@ Ecossistema europeu de bem-estar bioelétrico. Lençóis de aterramento em prata
 - [Início (PT)](https://vitalitylifebalance.com/pt/): visão geral da Vitality, produtos e filosofia bioelétrica.
 - [Lençol de aterramento (PT)](https://vitalitylifebalance.com/pt/lencol-aterramento): ficha do lençol individual com 5 % de fio de prata.
 - [Lençóis de aterramento (PT)](https://vitalitylifebalance.com/pt/lencois-de-aterramento): explicação do grounding e da gama de produtos earthing.
-- [Vipassanna (PT)](https://vitalitylifebalance.com/pt/vipassanna): ficha do dispositivo principal de reconexão bioelétrica.
+- [Vipassanna (PT)](https://vitalitylifebalance.com/pt/dispositivo-vipassanna): ficha do dispositivo principal de reconexão bioelétrica.
 
 ## Contacto
 

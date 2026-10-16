@@ -3,6 +3,21 @@
 # y se estrellan contra 404 al intentar citarnos (18 demand signals fallidos en
 # Cloudflare AI Crawl Control, 2026-07-09). Cada ruta vieja aterriza en contenido vivo.
 
+# Vipassanna: una sola URL por idioma (2026-10-16). La landing narrativa se fusiona
+# en la ficha, que tiene Product+Offer 199 €, FAQPage, botón de compra, ~220 enlaces
+# internos y es la clave del tracking de compra en consent.js. En GSC (28 d) ninguna
+# de las dos tenía tráfico real (landing 1 impresión, ficha 0), así que el coste es nulo.
+/vipassanna-landing /vipassanna-product 301
+/vipassanna-landing.html /vipassanna-product 301
+/en/vipassanna /en/vipassanna-device 301
+/en/vipassanna.html /en/vipassanna-device 301
+/fr/vipassanna /fr/dispositif-vipassanna 301
+/fr/vipassanna.html /fr/dispositif-vipassanna 301
+/de/vipassanna /de/vipassanna-geraet 301
+/de/vipassanna.html /de/vipassanna-geraet 301
+/pt/vipassanna /pt/dispositivo-vipassanna 301
+/pt/vipassanna.html /pt/dispositivo-vipassanna 301
+
 # Rutas /productos/ (plural) de la tienda anterior → fichas actuales.
 # MEDIDO 2026-09-10: la UNICA URL de vitalitylifebalance.com que Google tiene
 # indexada es /productos/mantas-grounding, y devolvia 404 — el bloque de abajo
