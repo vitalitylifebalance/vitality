@@ -5,6 +5,9 @@
 #      -> all fonts are self-hosted under /assets/fonts/ (fix/seguridad-legal, 26-oct-2026)
 #   2. a language home (index.html, en/ fr/ de/ pt/) is missing the preload of
 #      the five hero woff2 files (perf commit fabfa52, 29-oct-2026)
+#   3. drafts/ or .pipeline_tmp/ would be uploaded: .deployignore must exist, list both,
+#      and an rsync dry run with it must not include them (wrangler ignores .gitignore;
+#      tools/deploy.sh stages the site with this same exclude file, 29-oct-2026)
 # Usage: tools/predeploy-check.sh [repo-root]   (default: repo that holds this script)
 set -u
 ROOT="${1:-$(cd "$(dirname "$0")/.." && pwd)}"
@@ -49,9 +52,32 @@ for home in "${HOMES[@]}"; do
   fi
 done
 
+# 3. drafts/ and .pipeline_tmp/ must be excluded from the staged upload.
+DEPLOY_EXCLUDED=(drafts .pipeline_tmp)
+if [ ! -f .deployignore ]; then
+  echo "FAIL: .deployignore not found (tools/deploy.sh needs it to keep drafts/ and .pipeline_tmp/ off production)"
+  errors=$((errors + 1))
+else
+  for dir in "${DEPLOY_EXCLUDED[@]}"; do
+    if ! grep -qx "/$dir/" .deployignore; then
+      echo "FAIL: .deployignore does not list /$dir/"
+      errors=$((errors + 1))
+    fi
+  done
+  stage_probe=$(mktemp -d)
+  leaked=$(rsync -an --out-format='%n' --exclude-from=.deployignore ./ "$stage_probe/" \
+    | grep -E "^(drafts|\.pipeline_tmp)(/|$)" || true)
+  rm -rf "$stage_probe"
+  if [ -n "$leaked" ]; then
+    echo "FAIL: these paths would still be uploaded despite .deployignore:"
+    echo "$leaked" | head -5 | sed 's/^/  /'
+    errors=$((errors + 1))
+  fi
+fi
+
 html_count=$(find . -name "*.html" -not -path "./node_modules/*" -not -path "./.git/*" | wc -l | tr -d ' ')
 if [ "$errors" -gt 0 ]; then
   echo "predeploy-check: $errors problem(s) in $html_count HTML files. Deploy blocked."
   exit 1
 fi
-echo "predeploy-check: OK ($html_count HTML files, no Google Fonts, 5 preloads in ${#HOMES[@]} homes)."
+echo "predeploy-check: OK ($html_count HTML files, no Google Fonts, 5 preloads in ${#HOMES[@]} homes, drafts/ and .pipeline_tmp/ excluded from upload)."

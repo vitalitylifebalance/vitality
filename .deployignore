@@ -1,0 +1,18 @@
+# Paths that must NOT be served by Cloudflare Pages.
+# wrangler pages deploy ignores .gitignore and has no ignore file of its own (its hardcoded list
+# is only _worker.js/_redirects/_headers/_routes.json/functions/.DS_Store/node_modules/.git/.wrangler),
+# so tools/deploy.sh stages the site with `rsync --exclude-from=.deployignore` and uploads the copy.
+# tools/predeploy-check.sh fails if drafts/ or .pipeline_tmp/ would still be uploaded.
+# Format: rsync exclude patterns (gitignore-like); a leading / anchors to the repo root.
+/.git/
+/.gitignore
+/.deployignore
+/.wrangler/
+.DS_Store
+node_modules/
+__pycache__/
+/.pipeline_tmp/
+/drafts/
+/docs/
+/tools/
+/README.md
